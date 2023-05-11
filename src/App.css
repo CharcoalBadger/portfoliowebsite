@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
+:root {
+  --body-background: #0e1012;
+  --body-color: #e4eff1;
+
+  --heading: clamp(40px, 4vw, 1920px);
+
+  --ff-primary: "Times New Roman", sans-serif;
+  --ff-secondary: "Work Sans", sans-serif;
+  --ff-accent: "Sofia", sans-serif;
+
+  --step--2: clamp(1.04rem, calc(0.97rem + 0.38vw), 1.44rem);
+  --step--1: clamp(1.25rem, calc(1.15rem + 0.52vw), 1.8rem);
+  --step--1-a: clamp(1.27rem, calc(1.17rem + 0.54vw), 1.9rem);
+  --step-0: clamp(1.5rem, calc(1.36rem + 0.71vw), 2.25rem);
+  --step-0-1: clamp(1.7rem, calc(1.38rem + 0.73vw), 2.27rem);
+  --step-1: clamp(1.8rem, calc(1.61rem + 0.96vw), 2.81rem);
+  --step-2: clamp(2.16rem, calc(1.9rem + 1.29vw), 3.52rem);
+  --step-3: clamp(2.59rem, calc(2.25rem + 1.72vw), 4.39rem);
+  --step-4: clamp(3.11rem, calc(2.66rem + 2.27vw), 5.49rem);
+  --step-5: clamp(3.73rem, calc(3.14rem + 2.98vw), 6.87rem);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+[data-theme="dark"] {
+  --body-background: #e4eff1;
+  --body-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  width: 0.000000001em;
+  background-color: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--body-background);
+  color: var(--body-color);
+  overflow-y: scroll;
+}
+
+h1 {
+  font-size: 2rem; /* 32px on mobile */
+}
+
+h2 {
+  font-size: 1.75rem; /* 28px on mobile */
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px on mobile */
+}
+
+p {
+  font-size: 1rem; /* 16px on mobile */
+}
+
+li {
+  font-size: 1rem; /* 16px on mobile */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem; /* 40px on tablet */
+  }
+
+  h2 {
+    font-size: 2rem; /* 32px on tablet */
+  }
+
+  h3 {
+    font-size: 1.75rem; /* 28px on tablet */
+  }
+
+  p {
+    font-size: 1.125rem; /* 18px on tablet */
+  }
+
+  li {
+    font-size: 1.125rem; /* 18px on tablet */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  h1 {
+    font-size: 3rem; /* 48px on desktop */
   }
-  to {
-    transform: rotate(360deg);
+
+  h2 {
+    font-size: 2.5rem; /* 40px on desktop */
+  }
+
+  h3 {
+    font-size: 2rem; /* 32px on desktop */
+  }
+
+  p {
+    font-size: 1.25rem; /* 20px on desktop */
+  }
+
+  li {
+    font-size: 1.25rem; /* 20px on desktop */
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 3.5rem; /* 56px on large desktop */
+  }
+
+  h2 {
+    font-size: 2.75rem; /* 44px on large desktop */
+  }
+
+  h3 {
+    font-size: 2.25rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.375rem; /* 22px on large desktop */
+  }
+
+  li {
+    font-size: 1.375rem; /* 22px on large desktop */
+  }
+}
+
+/* Extra extra large devices (1920px and up) */
+@media (min-width: 1920px) {
+  h1 {
+    font-size: 4rem; /* 64px on extra large desktop */
+  }
+
+  h2 {
+    font-size: 3rem; /* 48px on extra large desktop */
+  }
+
+  h3 {
+    font-size: 2.5rem; /* 40px on extra large desktop */
+  }
+
+  p {
+    font-size: 1.5rem; /* 24px on extra large desktop */
+  }
+
+  li {
+    font-size: 1.5rem; /* 24px on extra large desktop */
   }
 }
