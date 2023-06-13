@@ -48,6 +48,19 @@ body {
   overflow-y: scroll;
 }
 
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   font-size: 2rem; /* 32px on mobile */
 }

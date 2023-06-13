@@ -1,0 +1,12 @@
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 1rem;
+}
+
+.nav-inner img {
+  width: 5%;
+  height: 5%;
+}

@@ -4,7 +4,11 @@ import "./navbar.css";
 export default function Navbar() {
   return (
     <div>
-      <h1>William Douglas</h1>
+      <div className="nav-inner">
+        <p>William Douglas</p>
+        <img src="./logo512.png" alt="filler" />
+        <p>Light/Dark</p>
+      </div>
     </div>
   );
 }
