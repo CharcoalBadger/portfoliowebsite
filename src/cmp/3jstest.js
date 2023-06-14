@@ -25,6 +25,14 @@ export default function Threejstest() {
       renderer.setSize(window.innerWidth, window.innerHeight);
       containerRef.current.appendChild(renderer.domElement);
 
+      // Add light sources
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // soft white light
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+      directionalLight.position.set(1, 2, 4);
+      scene.add(directionalLight);
+
       const sphereGeometry = new THREE.SphereGeometry(500, 60, 40);
       sphereGeometry.scale(-1, 1, 1);
       const textureLoader = new THREE.TextureLoader();
