@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { Water } from "three/examples/jsm/objects/Water.js";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
+import createTree from "./tree"; // assuming the path to tree.js
+import createGround from "./ground";
 
 export default function Threejstest() {
   const containerRef = useRef();
 
   useEffect(() => {
-    let scene, camera, renderer, controls, water;
+    let scene, camera, renderer, controls;
+    const treePool = [];
 
     function init() {
       scene = new THREE.Scene();
@@ -21,60 +22,53 @@ export default function Threejstest() {
       camera.position.set(5, 3, 5);
 
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setSize(canvasWidth, canvasHeight);
+      renderer.setSize(window.innerWidth, window.innerHeight);
       containerRef.current.appendChild(renderer.domElement);
 
       const sphereGeometry = new THREE.SphereGeometry(500, 60, 40);
       sphereGeometry.scale(-1, 1, 1);
       const textureLoader = new THREE.TextureLoader();
-      const texture = textureLoader.load("/neon-city-main.jpg");
+      const texture = textureLoader.load("/orangeforest.jpg");
       const material = new THREE.MeshBasicMaterial({ map: texture });
       const backgroundMesh = new THREE.Mesh(sphereGeometry, material);
       scene.add(backgroundMesh);
 
       controls = new OrbitControls(camera, renderer.domElement);
 
-      var light = new THREE.DirectionalLight(0xffffff, 1);
-      light.position.set(5, 5, 5);
-      scene.add(light);
+      // Creating a pool of trees
+      for (let i = 0; i < 100; i++) {
+        const tree = createTree();
+        tree.position.set(
+          Math.random() * 100 - 50,
+          0,
+          Math.random() * 100 - 50
+        );
+        scene.add(tree);
+        treePool.push(tree);
+      }
 
-      const circleRadius = Math.min(canvasWidth, canvasHeight) / 100;
-      const segments = 64; // Number of segments used to create the circle geometry
-      const waterGeometry = new THREE.CircleGeometry(circleRadius, segments);
-      water = new Water(waterGeometry, {
-        textureWidth: 512,
-        textureHeight: 512,
-        waterNormals: new THREE.TextureLoader().load(
-          "/watertexture.jpg",
-          function (texture) {
-            texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-          }
-        ),
-        alpha: 1.0,
-        sunDirection: light.position.clone().normalize(),
-        sunColor: 0xffffff,
-        waterColor: 0x00aec6,
-        distortionScale: 3.7,
-        fog: scene.fog !== undefined,
-      });
-      water.rotation.x = -Math.PI / 2;
-      scene.add(water);
-
-      // Load and position the tree model
-      const objLoader = new OBJLoader();
-      objLoader.load("/Tree1.obj", function (object) {
-        object.position.set(2, 0, 2); // Adjust the position as needed
-        scene.add(object);
-      });
+      const ground = createGround();
+      scene.add(ground);
 
       animate();
     }
 
     function animate() {
       requestAnimationFrame(animate);
+
+      // Move trees towards the camera
+      for (let i = 0; i < treePool.length; i++) {
+        const tree = treePool[i];
+        tree.position.z += 0.1;
+
+        // If the tree has passed the camera, reposition it in front
+        if (tree.position.z > camera.position.z) {
+          tree.position.z -= 100;
+        }
+      }
+
       renderer.render(scene, camera);
       controls.update();
-      water.material.uniforms["time"].value += 1.0 / 60.0;
     }
 
     init();
