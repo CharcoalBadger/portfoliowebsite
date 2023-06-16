@@ -20,10 +20,7 @@ export default function Portfoliointro() {
           efficient and quality solutions. Away from the code, I'm an avid
           gamer, PC builder, and I enjoy conceptualizing website designs.
         </p>
-        <p>
-          Intrigued to collaborate or chat? Feel free to reach out here, nooooop
-          asdnasdngfasdasdnasd
-        </p>
+        <p>Intrigued to collaborate or chat? Feel free to reach out</p>
       </div>
     </div>
   );

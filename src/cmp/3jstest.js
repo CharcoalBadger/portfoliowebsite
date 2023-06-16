@@ -1,63 +1,61 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { Water } from "three/examples/jsm/objects/Water.js";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
+import createPortfolioInfo from "./createportfolio";
 
 export default function Threejstest() {
   const containerRef = useRef();
+  const fontRef = useRef();
 
   useEffect(() => {
-    let scene, camera, renderer, controls, water;
+    let scene, camera, renderer, controls, clickableObject;
+    const currentRef = containerRef.current;
+    let raycaster = new THREE.Raycaster();
+    let mouse = new THREE.Vector2();
 
     function init() {
       scene = new THREE.Scene();
 
-      const canvasWidth = 4174;
-      const canvasHeight = 1800;
+      const canvasWidth = window.innerWidth;
+      const canvasHeight = window.innerHeight;
 
       const aspectRatio = canvasWidth / canvasHeight;
-      camera = new THREE.PerspectiveCamera(55, aspectRatio, 0.1, 1000);
-      camera.position.set(5, 3, 5);
+      camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000);
+      camera.position.set(0, 0, 0.1);
 
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       renderer.setSize(canvasWidth, canvasHeight);
-      containerRef.current.appendChild(renderer.domElement);
+      currentRef.appendChild(renderer.domElement);
 
-      const sphereGeometry = new THREE.SphereGeometry(500, 60, 40);
+      const sphereGeometry = new THREE.SphereGeometry(1, 60, 40);
       sphereGeometry.scale(-1, 1, 1);
       const textureLoader = new THREE.TextureLoader();
-      const texture = textureLoader.load("/neon-city-main.jpg");
-      const material = new THREE.MeshBasicMaterial({ map: texture });
-      const backgroundMesh = new THREE.Mesh(sphereGeometry, material);
+      const texture = textureLoader.load("/nzpano.jpg");
+      const sphereMaterial = new THREE.MeshBasicMaterial({ map: texture }); // Renamed here
+      const backgroundMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
       scene.add(backgroundMesh);
+
+      // Adding a cube as a clickable object
+      const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+      const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Renamed here
+      clickableObject = new THREE.Mesh(geometry, cubeMaterial);
+      clickableObject.position.set(2, 0, 0); // Setting position of cube
+      scene.add(clickableObject);
 
       controls = new OrbitControls(camera, renderer.domElement);
 
-      var light = new THREE.DirectionalLight(0xffffff, 1);
+      const light = new THREE.DirectionalLight(0xffffff, 1);
       light.position.set(5, 5, 5);
       scene.add(light);
 
-      const circleRadius = Math.min(canvasWidth, canvasHeight) / 100;
-      const segments = 64; // Number of segments used to create the circle geometry
-      const waterGeometry = new THREE.CircleGeometry(circleRadius, segments);
-      water = new Water(waterGeometry, {
-        textureWidth: 512,
-        textureHeight: 512,
-        waterNormals: new THREE.TextureLoader().load(
-          "/watertexture.jpg",
-          function (texture) {
-            texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-          }
-        ),
-        alpha: 1.0,
-        sunDirection: light.position.clone().normalize(),
-        sunColor: 0xffffff,
-        waterColor: 0x00aec6,
-        distortionScale: 3.7,
-        fog: scene.fog !== undefined,
+      window.addEventListener("resize", onWindowResize, false);
+
+      const loader = new FontLoader();
+      loader.load("/fonts/helvetiker_regular.typeface.json", (loadedFont) => {
+        fontRef.current = loadedFont;
+        createPortfolioInfo(scene, fontRef.current);
       });
-      water.rotation.x = -Math.PI / 2;
-      scene.add(water);
 
       animate();
     }
@@ -66,10 +64,56 @@ export default function Threejstest() {
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
       controls.update();
-      water.material.uniforms["time"].value += 1.0 / 60.0;
     }
 
+    function onWindowResize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize(width, height);
+    }
+
+    function onMouseMove(event) {
+      event.preventDefault();
+
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    }
+
+    function onMouseClick(event) {
+      event.preventDefault();
+
+      // update the picking ray with the camera and mouse position
+      raycaster.setFromCamera(mouse, camera);
+
+      // calculate objects intersecting the picking ray
+      const intersects = raycaster.intersectObjects(scene.children);
+
+      for (let i = 0; i < intersects.length; i++) {
+        // check if the clicked object is our cube
+        if (intersects[i].object === clickableObject) {
+          // move the camera to a specific position
+          camera.position.set(1, 1, 1);
+        }
+      }
+    }
+
+    window.addEventListener("mousemove", onMouseMove, false);
+    window.addEventListener("click", onMouseClick, false);
+
     init();
+
+    return () => {
+      if (currentRef) {
+        currentRef.removeChild(renderer.domElement);
+        window.removeEventListener("resize", onWindowResize, false);
+        window.removeEventListener("mousemove", onMouseMove, false);
+        window.removeEventListener("click", onMouseClick, false);
+      }
+    };
   }, []);
 
   return (

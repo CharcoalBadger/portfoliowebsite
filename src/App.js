@@ -1,22 +1,22 @@
 import "./App.css";
-import Navbar from "./cmp/navbar";
-import PanoramicImage from "./cmp/panoramicimage";
-import Portfoliointro from "./cmp/portfoliointro";
-import Project from "./cmp/project";
-import Contactform from "./cmp/contactform";
-import Footer from "./cmp/footer";
-import Logobanner from "./cmp/logobanner";
-// import Threejstest from "./cmp/3jstest";
+// import Navbar from "./cmp/navbar";
+// import PanoramicImage from "./cmp/panoramicimage";
+// import Portfoliointro from "./cmp/portfoliointro";
+// import Project from "./cmp/project";
+// import Contactform from "./cmp/contactform";
+// import Footer from "./cmp/footer";
+// import Logobanner from "./cmp/logobanner";
+import Threejstest from "./cmp/3jstest";
 
 function App() {
   return (
     <div className="main">
-      <Navbar />
+      {/* <Navbar />
       <div className="content">
         <PanoramicImage />
-      </div>
-      {/* <Threejstest /> */}
-      <div className="portfolio-intro">
+      </div> */}
+      <Threejstest />
+      {/* <div className="portfolio-intro">
         <Logobanner />
       </div>
       <div className="portfolio-section">
@@ -30,7 +30,7 @@ function App() {
       </div>
       <div className="footer-section">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }
