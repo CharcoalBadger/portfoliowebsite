@@ -15,6 +15,7 @@
     "react-three-fiber": "^6.0.13",
     "three": "^0.152.2",
     "three-bmfont-text": "^3.0.1",
+    "three-text2d": "^0.6.0",
     "troika-three-text": "^0.47.2",
     "web-vitals": "^2.1.4"
   },

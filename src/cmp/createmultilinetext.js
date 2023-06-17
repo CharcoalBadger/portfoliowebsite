@@ -11,4 +11,5 @@ export default function createMultiLineText(scene, font, text, position) {
   textMesh.frustumCulled = false; // Set frustumCulled to false
 
   scene.add(textMesh);
+  return textMesh;
 }

@@ -11,8 +11,8 @@ import Threejstest from "./cmp/3jstest";
 function App() {
   return (
     <div className="main">
-      {/* <Navbar />
-      <div className="content">
+      {/* <Navbar /> */}
+      {/* <div className="content">
         <PanoramicImage />
       </div> */}
       <Threejstest />
