@@ -1,0 +1,71 @@
+.dark_mode {
+  display: flex;
+  align-items: center;
+}
+
+.dark_mode_label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #b0e0e6; /* Light Blue */
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  background: #f9f09f;
+  transition: background-color 0.5s;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle Shadow */
+}
+
+.dark_mode_label:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #e7d20d; /* Color of circle in light mode */
+  transition: transform 0.5s, background 0.5s;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle Shadow */
+}
+
+.dark_mode_input {
+  display: none;
+}
+
+.dark_mode_input:checked + .dark_mode_label {
+  background-color: #7597bd; /* Darker Shade of Blue */
+}
+
+.dark_mode_input:checked + .dark_mode_label:before {
+  transform: translateX(100%);
+  background: #456990; /* Color of circle in dark mode */
+}
+
+.dark_mode_label .sun,
+.dark_mode_label .moon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  transition: fill 0.5s;
+}
+
+.dark_mode_label .sun {
+  left: 6px;
+  fill: black; /* Bright Yellow Sun in light mode */
+}
+
+.dark_mode_label .moon {
+  right: 6px;
+  opacity: 0;
+}
+
+.dark_mode_input:checked + .dark_mode_label .sun {
+  opacity: 0;
+}
+
+.dark_mode_input:checked + .dark_mode_label .moon {
+  fill: black; /* Blue Moon in dark mode */
+  opacity: 1;
+}

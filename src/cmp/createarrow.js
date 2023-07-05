@@ -11,6 +11,7 @@ export default function createArrow(
   const spriteMaterial = new THREE.SpriteMaterial({
     map: spriteMap,
     color: 0xffffff,
+    depthTest: false, // Disable depth testing for the sprite material
   });
   const arrowSprite = new THREE.Sprite(spriteMaterial);
 

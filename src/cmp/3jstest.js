@@ -5,6 +5,7 @@ import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 import createPortfolioInfo from "./createportfolio";
 import { Raycaster } from "./raycast"; // add import statement here
 import createArrow from "./createarrow";
+import Introplane from "./introplane";
 
 export default function Threejstest() {
   const containerRef = useRef();
@@ -39,18 +40,23 @@ export default function Threejstest() {
       scene.add(backgroundMesh);
 
       // Adding a cube as a clickable object
-      const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+      const geometry = new THREE.BoxGeometry(0.01, 0.01, 0.01);
       const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
       clickableObject = new THREE.Mesh(geometry, cubeMaterial);
       clickableObject.position.set(2, 0, 0);
       scene.add(clickableObject);
 
       // Add this in your init function after the first cube creation
-      const linkCubeGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+      const linkCubeGeometry = new THREE.BoxGeometry(0.01, 0.01, 0.01);
       const linkCubeMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // this time we use red
       const linkCube = new THREE.Mesh(linkCubeGeometry, linkCubeMaterial);
       linkCube.position.set(-2, 0, 0); // we position it to the left of the first cube
       scene.add(linkCube);
+
+      const { planeMesh, buttonMesh, togglePlane } = Introplane();
+      planeMesh.position.set(-0.3, 0, 0);
+      scene.add(planeMesh);
+      scene.add(buttonMesh);
 
       controls = new OrbitControls(camera, renderer.domElement);
 
@@ -59,7 +65,7 @@ export default function Threejstest() {
       const loader = new FontLoader();
       loader.load("/fonts/helvetiker_regular.typeface.json", (loadedFont) => {
         fontRef.current = loadedFont;
-        createPortfolioInfo(scene, fontRef.current);
+        createPortfolioInfo(scene, fontRef.current, camera);
       });
 
       animate();
@@ -115,6 +121,7 @@ export default function Threejstest() {
             controls.update();
           },
         },
+        { object: buttonMesh, action: togglePlane },
       ];
 
       // Instantiate the Raycaster here after the scene, camera, and clickableObject have been initialized

@@ -1,36 +1,26 @@
+import React, { useState } from "react";
 import "./App.css";
-// import Navbar from "./cmp/navbar";
-// import PanoramicImage from "./cmp/panoramicimage";
+import Navbar from "./cmp/navbar";
 // import Portfoliointro from "./cmp/portfoliointro";
-// import Project from "./cmp/project";
+import Project from "./cmp/project";
 // import Contactform from "./cmp/contactform";
 // import Footer from "./cmp/footer";
-// import Logobanner from "./cmp/logobanner";
-import Threejstest from "./cmp/3jstest";
 
 function App() {
+  const [isDarkMode, setDarkMode] = useState(true);
+
   return (
     <div className="main">
-      {/* <Navbar /> */}
-      {/* <div className="content">
-        <PanoramicImage />
+      <Navbar isDarkMode={isDarkMode} setDarkMode={setDarkMode} />
+      {/* <div className="portfolio-section">
+        <Portfoliointro isDarkMode={isDarkMode} setDarkMode={setDarkMode} />
       </div> */}
-      <Threejstest />
-      {/* <div className="portfolio-intro">
-        <Logobanner />
-      </div>
-      <div className="portfolio-section">
-        <Portfoliointro />
-      </div>
-      <div className="project-section">
-        <Project />
-      </div>
-      <div className="contact-section">
-        <Contactform />
-      </div>
-      <div className="footer-section">
-        <Footer />
-      </div> */}
+
+      <Project />
+
+      {/* <Contactform />
+
+      <Footer /> */}
     </div>
   );
 }
