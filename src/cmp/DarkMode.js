@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { ReactComponent as Sun } from "./Sun.svg";
 import { ReactComponent as Moon } from "./Moon.svg";
 import "./DarkMode.css";
 
 const DarkMode = ({ isDarkMode, setDarkMode }) => {
-  const setDarkTheme = () => {
+  const setDarkTheme = useCallback(() => {
     document.querySelector("body").setAttribute("data-theme", "dark");
     setDarkMode(true);
-  };
+  }, [setDarkMode]);
 
-  const setLightTheme = () => {
+  const setLightTheme = useCallback(() => {
     document.querySelector("body").setAttribute("data-theme", "light");
     setDarkMode(false);
-  };
+  }, [setDarkMode]);
 
   const toggleTheme = (e) => {
     if (e.target.checked) setDarkTheme();
@@ -23,7 +23,7 @@ const DarkMode = ({ isDarkMode, setDarkMode }) => {
   useEffect(() => {
     if (isDarkMode) setDarkTheme();
     else setLightTheme();
-  }, [isDarkMode]);
+  }, [isDarkMode, setDarkTheme, setLightTheme]);
 
   return (
     <div className="dark_mode">
