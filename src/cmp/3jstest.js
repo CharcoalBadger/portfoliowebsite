@@ -34,7 +34,7 @@ export default function Threejstest() {
       const sphereGeometry = new THREE.SphereGeometry(10, 60, 40);
       sphereGeometry.scale(-1, 1, 1);
       const textureLoader = new THREE.TextureLoader();
-      const texture = textureLoader.load("/nzpanodark1.jpg");
+      const texture = textureLoader.load("/skydome.png");
       const sphereMaterial = new THREE.MeshBasicMaterial({ map: texture });
       const backgroundMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
       scene.add(backgroundMesh);

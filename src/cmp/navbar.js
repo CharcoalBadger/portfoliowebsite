@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
 import DarkMode from "./DarkMode";
-import Portfoliointro from "./portfoliointro";
 
 export default function Navbar() {
   const [isDarkMode, setDarkMode] = useState(true);
@@ -24,7 +23,6 @@ export default function Navbar() {
         </nav>
         <DarkMode isDarkMode={isDarkMode} setDarkMode={setDarkMode} />
       </div>
-      <Portfoliointro isDarkMode={isDarkMode} />
     </div>
   );
 }

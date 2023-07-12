@@ -124,11 +124,11 @@ export default function Shaunografia() {
         <Logoshaun />
         <h1>Shaunografia</h1>
         <p>
-          Discover captivating visuals by our non-binary photographer from New
-          Zealand and the Philippines. With a passion for creative photography,
-          their diverse portfolio covers events, weddings, engagements, and pet
-          photoshoots. Combining multicultural influences and attention to
-          detail, they create memorable visual stories.
+          Lorem ipsum dolor sit amet. Ut velit accusamus eos fugit eius eos
+          quidem similique ut molestiae dolorem ea quam laborum. Est doloribus
+          molestiae ut esse repellat cum voluptas exercitationem et minus
+          consectetur est officia perferendis aut consequatur Quis ex dolores
+          nemo. Ad possimus officiis id quae.
         </p>
         <h3>React | Github | GSAP </h3>
         <div className="link-group">

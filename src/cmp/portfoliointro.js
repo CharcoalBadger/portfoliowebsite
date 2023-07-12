@@ -88,6 +88,11 @@ export default function Portfoliointro({ isDarkMode }) {
     <div className="portfolio-container">
       <div className="parallax" ref={parallaxRef}>
         <h2 className="ptext">William Douglas</h2>
+        <p className="ppara">
+          I'm a web developer based in the vibrant landscapes of New Zealand. I
+          am passionate about the digital world and have dedicated myself to
+          crafting web experiences that are both immersive and engaging.
+        </p>
         {isDarkMode ? (
           <>
             <img src="/hill1.png" alt="hill1" className="hill1" />

@@ -1,0 +1,22 @@
+.portfolio-container {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 200px;
+}
+
+.intro {
+  width: 90%;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.intro-background-image {
+  position: absolute;
+  left: 7%;
+  bottom: -5%;
+  z-index: -1;
+  opacity: 0.08;
+  width: 500px;
+}

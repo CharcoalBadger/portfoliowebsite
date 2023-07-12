@@ -2,28 +2,21 @@ import * as THREE from "three";
 
 export default function createClickableImage(
   scene,
-  imageUrl,
-  linkUrl,
+  imagePath,
+  link,
   position,
-  size
+  width,
+  height
 ) {
-  const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load(imageUrl);
-
+  const texture = new THREE.TextureLoader().load(imagePath);
   const material = new THREE.MeshBasicMaterial({
     map: texture,
+    side: THREE.DoubleSide, // make the material double sided
     transparent: true,
   });
-  const geometry = new THREE.PlaneGeometry(size.width, size.height);
+  const geometry = new THREE.PlaneGeometry(width, height);
   const mesh = new THREE.Mesh(geometry, material);
-
-  mesh.position.set(position.x, position.y, position.z);
-
-  mesh.addEventListener("mousedown", () => {
-    window.open(linkUrl, "_blank");
-  });
-
-  mesh.cursor = "pointer";
-
+  mesh.position.copy(position);
   scene.add(mesh);
+  return mesh;
 }

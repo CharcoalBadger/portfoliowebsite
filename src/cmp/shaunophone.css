@@ -1,0 +1,41 @@
+.shparent-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50vh; /* Adjust this as needed */
+  margin-bottom: 50vh;
+}
+
+.text-container {
+  margin-left: 10%;
+  width: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shaunophone-container {
+  position: absolute;
+
+  width: 60%;
+  height: 800px;
+  border: 1px solid red;
+}
+
+.link-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.github-logo {
+  width: 15%;
+  filter: var(--body-filter);
+}
+
+.external-logo {
+  width: 15%;
+  filter: var(--body-filter);
+}
