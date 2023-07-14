@@ -86,8 +86,8 @@ export default function Sands() {
 
         scene.add(model);
 
-        model.position.set(0.1, 0, -300);
-        model.scale.set(2, 2, 1.5);
+        model.position.set(0.1, -30, -300);
+        model.scale.set(2.5, 2.5, 1.5);
         model.rotation.y = 66.2;
         model.rotation.x = 44.5;
 
@@ -124,11 +124,20 @@ export default function Sands() {
         <Logosands />
         <h1>Sands Carving Studio</h1>
         <p>
-          Lorem ipsum dolor sit amet. Ut velit accusamus eos fugit eius eos
-          quidem similique ut molestiae dolorem ea quam laborum. Est doloribus
-          molestiae ut esse repellat cum voluptas exercitationem et minus
-          consectetur est officia perferendis aut consequatur Quis ex dolores
-          nemo. Ad possimus officiis id quae.
+          The Sands Carving Studio website revamp was primarily undertaken to
+          correct non-functional components and enhance its overall user
+          interface and experience.
+        </p>
+        <p>
+          Initial requirements encompassed the incorporation of a new video with
+          a custom video player, which evolved into a comprehensive site
+          overhaul. This ranged from redesigning the navigation and footer to
+          remodeling product pages, along with crafting custom functionalities
+          such as accordion-style FAQ sections and product filters. This project
+          was completed in Shopify after a dedicated two-day learning period.
+          The result was a renewed, user-friendly e-commerce website that
+          significantly impressed the client, leading to further collaboration
+          opportunities for additional upgrades.
         </p>
         <h3>HTML | CSS | Javascript </h3>
         <div className="slink-group">

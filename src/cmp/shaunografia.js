@@ -86,8 +86,8 @@ export default function Shaunografia() {
 
         scene.add(model);
 
-        model.position.set(0.1, 0, -300);
-        model.scale.set(2, 2, 1.5);
+        model.position.set(0.1, -30, -300);
+        model.scale.set(2.5, 2.5, 1.5);
         model.rotation.y = 65.8;
         model.rotation.x = 44.5;
 
@@ -124,11 +124,18 @@ export default function Shaunografia() {
         <Logoshaun />
         <h1>Shaunografia</h1>
         <p>
-          Lorem ipsum dolor sit amet. Ut velit accusamus eos fugit eius eos
-          quidem similique ut molestiae dolorem ea quam laborum. Est doloribus
-          molestiae ut esse repellat cum voluptas exercitationem et minus
-          consectetur est officia perferendis aut consequatur Quis ex dolores
-          nemo. Ad possimus officiis id quae.
+          The Shaunografia website is a minimalist, mobile-friendly platform,
+          created for a freelance photographer to uniquely showcase their work
+          and service offerings beyond traditional social media.
+        </p>
+        <p>
+          Emphasizing visual content over text, the site uses the GreenSock
+          Animation Platform (GSAP) to craft distinctive animations, delivering
+          a captivating user experience while highlighting the photographer's
+          work. Iterative design processes led to a refined final product that
+          seamlessly caters to both desktop and mobile users, receiving
+          enthusiastic client approval for its balance of aesthetics,
+          functionality, and creative spirit.
         </p>
         <h3>React | Github | GSAP </h3>
         <div className="link-group">

@@ -1,8 +1,11 @@
 import React, { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import "./portfoliointro.css";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function Portfoliointro({ isDarkMode }) {
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Portfoliointro() {
   const parallaxRef = useRef(null);
   const leafRef = useRef(null);
   const treeRef = useRef(null);
@@ -89,64 +92,21 @@ export default function Portfoliointro({ isDarkMode }) {
       <div className="parallax" ref={parallaxRef}>
         <h2 className="ptext">William Douglas</h2>
         <p className="ppara">
-          I'm a web developer based in the vibrant landscapes of New Zealand. I
-          am passionate about the digital world and have dedicated myself to
-          crafting web experiences that are both immersive and engaging.
+          I am a passionate web developer from New Zealand that loves to craft
+          immersive web experiences
         </p>
-        {isDarkMode ? (
-          <>
-            <img src="/hill1.png" alt="hill1" className="hill1" />
-            <img src="/hill2.png" alt="hill2" className="hill2" />
-            <img src="/hill3.png" alt="hill3" className="hill3" />
-            <img src="/hill4.png" alt="hill4" className="hill4" />
-            <img src="/hill5.png" alt="hill5" className="hill5" />
-            {/* <img src="/tree.png" alt="tree" className="tree" ref={treeRef} /> */}
-            <img src="/leaf.png" alt="leaf" className="leaf" ref={leafRef} />
-            <img
-              src="/plant.png"
-              alt="plant"
-              className="plant wide-image"
-              ref={plantRef}
-            />
-          </>
-        ) : (
-          <>
-            <img src="/hill1.png" alt="hill1" className="hill1" />
-            <img src="/hill2.png" alt="hill2" className="hill2" />
-            <img src="/hill3.png" alt="hill3" className="hill3" />
-            <img src="/hill4.png" alt="hill4" className="hill4" />
-            <img src="/hill5.png" alt="hill5" className="hill5" />
-            {/* <img src="/tree.png" alt="tree" className="tree" ref={treeRef} /> */}
-            <img src="/leaf.png" alt="leaf" className="leaf" ref={leafRef} />
-            <img
-              src="/plant.png"
-              alt="plant"
-              className="plant wide-image"
-              ref={plantRef}
-            />
-          </>
-        )}
+
+        {/* <img src="/leafbr.png" alt="leafbr" className="leafbr" />
+        <img src="/leafbl.png" alt="leafbl" className="leafbl" /> */}
+        <img src="/hill1.png" alt="hill1" className="hill1" />
+        <img src="/hill2.png" alt="hill2" className="hill2" />
+        <img src="/hill3.png" alt="hill3" className="hill3" />
+        <img src="/hill4.png" alt="hill4" className="hill4" />
+        <img src="/hill5.png" alt="hill5" className="hill5" />
+        {/* <img src="/tree.png" alt="tree" className="tree" ref={treeRef} /> */}
+        <img src="/leaf.png" alt="leaf" className="leaf" ref={leafRef} />
+        <img src="/plant.png" alt="plant" className="plant" ref={plantRef} />
       </div>
-      {/* <div className="intro">
-        <h1>William Douglas</h1>
-        <h2>Front-End Developer</h2>
-        <p>
-          I'm a web developer based in the vibrant landscapes of New Zealand. I
-          am passionate about the digital world and have dedicated myself to
-          crafting web experiences that are both immersive and engaging
-        </p>
-        <button className="intro-contact-button">Get in touch</button>
-        <button className="intro-download-button">Download CV</button>
-      </div>
-      <img
-        className="intro-background-image"
-        src={
-          isDarkMode
-            ? "./willogo-black-final-border.png"
-            : "./willogo-white-final-border.png"
-        }
-        alt="William Douglas Logo"
-      /> */}
     </div>
   );
 }

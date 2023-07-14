@@ -1,9 +1,9 @@
 :root {
-  --body-background: #eeeeee;
-  --body-color: #1f2122;
+  --body-background: #1f2122;
+  --body-color: #edf2f4;
   --body-accent-background: linear-gradient(to top, #68ccc4 0%, #003329 100%);
   --body-accent: #14a014;
-  --body-filter: brightness(0%);
+  --body-filter: brightness(100%);
 
   --heading: clamp(40px, 4vw, 1920px);
 
@@ -47,11 +47,10 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+
   background-color: var(--body-background);
   /* background-image: var(--body-accent-background); */
   color: var(--body-color);
-  overflow-y: scroll;
 }
 
 .main {
