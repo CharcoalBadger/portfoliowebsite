@@ -164,7 +164,7 @@ export default function Threejsdome() {
 
     let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: document.body,
+        trigger: containerRef.current,
         start: "top top",
         end: "bottom bottom",
         scrub: 1,
@@ -221,5 +221,7 @@ export default function Threejsdome() {
     };
   }, []);
 
-  return <div ref={containerRef} />;
+  return (
+    <div ref={containerRef} style={{ height: "100vh", overflow: "scroll" }} />
+  );
 }
