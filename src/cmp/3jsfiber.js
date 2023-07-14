@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Rain from "./rain";
+// import Rain from "./rain";
 import WaterComponent from "./water";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
