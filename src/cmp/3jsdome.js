@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { useEffect, useRef } from "react";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { Water } from "three/examples/jsm/objects/Water.js";
 import createClickableImage from "./createshaunografia";
 import { Raycaster } from "./raycast";
@@ -36,18 +36,18 @@ export default function Threejsdome() {
     containerRef.current.appendChild(renderer.domElement);
 
     //Add OrbitControls
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.addEventListener("change", function () {
-      console.log(
-        `Camera Position: x = ${camera.position.x}, y = ${camera.position.y}, z = ${camera.position.z}`
-      );
-    });
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.screenSpacePanning = false;
-    controls.minDistance = 100;
-    controls.maxDistance = 500;
-    controls.maxPolarAngle = Math.PI;
+    // const controls = new OrbitControls(camera, renderer.domElement);
+    // controls.addEventListener("change", function () {
+    //   console.log(
+    //     `Camera Position: x = ${camera.position.x}, y = ${camera.position.y}, z = ${camera.position.z}`
+    //   );
+    // });
+    // controls.enableDamping = true;
+    // controls.dampingFactor = 0.05;
+    // controls.screenSpacePanning = false;
+    // controls.minDistance = 100;
+    // controls.maxDistance = 500;
+    // controls.maxPolarAngle = Math.PI;
 
     const flash = new THREE.PointLight(0x062d89, 30, 500, 1.7);
     flash.position.set(200, 300, 100);
@@ -172,7 +172,8 @@ export default function Threejsdome() {
       },
     });
 
-    tl.to(camera.position, { x: 10, y: 5, z: 5, duration: 3 })
+    tl.to(camera.position, { x: 20, y: 5, z: 0.1, duration: 3 })
+      .to(camera.position, { x: 10, y: 5, z: 5, duration: 3 })
       .to(camera.position, { x: -10, y: -5, z: -5, duration: 3 })
       .to(camera.rotation, { y: Math.PI / 4, duration: 3 }, "<"); // rotation change starts at the beginning of the timeline
 
