@@ -90,10 +90,8 @@ export default function Portfoliointro() {
   return (
     <div className="portfolio-container">
       <div className="parallax" ref={parallaxRef}>
-        <h2 className="ptext">William Douglas</h2>
         <p className="ppara">
-          I am a passionate web developer from New Zealand that loves to craft
-          immersive web experiences
+          Kia ora! I am a creative front-end developer from New Zealand
         </p>
 
         {/* <img src="/leafbr.png" alt="leafbr" className="leafbr" />
@@ -105,7 +103,12 @@ export default function Portfoliointro() {
         <img src="/hill5.png" alt="hill5" className="hill5" />
         {/* <img src="/tree.png" alt="tree" className="tree" ref={treeRef} /> */}
         <img src="/leaf.png" alt="leaf" className="leaf" ref={leafRef} />
-        <img src="/plant.png" alt="plant" className="plant" ref={plantRef} />
+        <img
+          src="/plantblack.png"
+          alt="plant"
+          className="plant"
+          ref={plantRef}
+        />
       </div>
     </div>
   );

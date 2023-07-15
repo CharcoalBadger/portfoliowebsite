@@ -22,7 +22,7 @@
 
 .navigation a {
   text-decoration: none;
-  color: #359381;
+  color: var(--body-accent);
   padding: 6px 15px;
   border-radius: 20px;
   margin: 0 10px;
@@ -30,7 +30,7 @@
 }
 
 .navigation a:hover {
-  background: #359381;
+  background: var(--body-accent);
   color: #fff;
 }
 

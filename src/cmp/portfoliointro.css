@@ -1,26 +1,3 @@
-/* .portfolio-container {
-  margin-top: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 200px;
-} */
-
-/* .intro {
-  width: 90%;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-.intro-background-image {
-  position: absolute;
-  left: 7%;
-  bottom: -5%;
-  z-index: -1;
-  opacity: 0.08;
-  width: 500px;
-} */
-
 .parallax {
   position: relative;
   display: flex;
@@ -38,25 +15,16 @@
   pointer-events: none;
 }
 
-.ptext {
-  font-size: 5em;
-  top: 20%;
-  position: absolute;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  pointer-events: none;
-}
-
 .ppara {
-  font-size: 1.5em;
+  font-size: 2.5em;
+  font-weight: bolder;
   top: 38%;
-  position: absolute;
-  color: white;
+  position: sticky;
+  color: var(--body-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  z-index: 3;
+  z-index: 2;
   pointer-events: none;
-  text-align: left;
+  text-align: center;
   width: 25%;
 }
 
