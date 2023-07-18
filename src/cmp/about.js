@@ -15,7 +15,7 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-      y: -100,
+
       x: -700,
     });
 
