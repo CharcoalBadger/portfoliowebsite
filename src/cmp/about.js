@@ -22,7 +22,7 @@ export default function About() {
     ScrollTrigger.create({
       trigger: ".whatiuse-section",
       start: "top top", // Change this according to where your first animation ends
-      end: "1600%",
+      end: "1800%",
       pin: ".whatiuse-section",
       pinSpacing: false,
       markers: true,
@@ -43,7 +43,7 @@ export default function About() {
     ScrollTrigger.create({
       trigger: ".versioncontrol-section",
       start: "top top", // Change this according to where your first animation ends
-      end: "1200%",
+      end: "1400%",
       pin: ".versioncontrol-section",
       pinSpacing: false,
       markers: true,
@@ -64,7 +64,7 @@ export default function About() {
     ScrollTrigger.create({
       trigger: ".contentcreation-section",
       start: "top top", // Change this according to where your first animation ends
-      end: "800%",
+      end: "1000%",
       pin: ".contentcreation-section",
       pinSpacing: false,
       markers: true,
