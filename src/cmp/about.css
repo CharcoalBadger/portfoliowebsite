@@ -54,8 +54,10 @@
 
 .whatiuse-section {
   border: 1px solid blue;
+  margin-bottom: 100vh;
 }
 
 .versioncontrol-section {
   border: 1px solid purple;
+  margin-bottom: 100vh;
 }
