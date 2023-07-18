@@ -22,7 +22,7 @@ export default function About() {
     ScrollTrigger.create({
       trigger: ".about-container",
       start: "top top", // Change this according to where your first animation ends
-      end: "+=130%",
+      end: "400vh",
       pin: ".whatiuse-section",
       pinSpacing: false,
       markers: true,
@@ -43,8 +43,29 @@ export default function About() {
     ScrollTrigger.create({
       trigger: ".versioncontrol-section",
       start: "top top", // Change this according to where your first animation ends
-      end: "+=100%",
+      end: "200vh",
       pin: ".versioncontrol-section",
+      pinSpacing: false,
+      markers: true,
+    });
+
+    gsap.to(".contentcreation-section", {
+      scrollTrigger: {
+        trigger: ".contentcreation-section",
+        start: "bottom bottom",
+        end: "top top",
+        scrub: true,
+        markers: true,
+      },
+
+      x: "-10%",
+    });
+
+    ScrollTrigger.create({
+      trigger: ".contentcreation-section",
+      start: "top top", // Change this according to where your first animation ends
+      end: "200vh",
+      pin: ".contentcreation-section",
       pinSpacing: false,
       markers: true,
     });
