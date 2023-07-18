@@ -24,6 +24,7 @@ export default function About() {
       start: "top top", // Change this according to where your first animation ends
       end: "+=100%",
       pin: ".whatiuse-section",
+      pinSpacing: false,
       markers: true,
     });
 
@@ -44,6 +45,7 @@ export default function About() {
       start: "top top", // Change this according to where your first animation ends
       end: "+=100%",
       pin: ".versioncontrol-section",
+      pinSpacing: false,
       markers: true,
     });
   }, []);
