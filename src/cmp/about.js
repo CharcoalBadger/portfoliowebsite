@@ -15,7 +15,7 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-
+      y: "-200",
       x: "-110%",
     });
 
@@ -36,7 +36,7 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-
+      y: "-200",
       x: "-30%",
     });
 
@@ -57,7 +57,7 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-
+      y: "-200",
       x: "45%",
     });
 
@@ -78,7 +78,7 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-
+      y: "-200",
       x: "125%",
     });
 
