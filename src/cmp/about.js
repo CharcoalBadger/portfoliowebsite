@@ -41,7 +41,7 @@ export default function About() {
     });
 
     ScrollTrigger.create({
-      trigger: ".versioncontrol-section",
+      trigger: ".about-container",
       start: "top top", // Change this according to where your first animation ends
       end: "400%",
       pin: ".versioncontrol-section",
@@ -62,7 +62,7 @@ export default function About() {
     });
 
     ScrollTrigger.create({
-      trigger: ".contentcreation-section",
+      trigger: ".about-container",
       start: "top top", // Change this according to where your first animation ends
       end: "200%",
       pin: ".contentcreation-section",
