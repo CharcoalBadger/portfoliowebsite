@@ -15,13 +15,13 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-      y: "500",
+
       x: "-110%",
     });
 
     ScrollTrigger.create({
       trigger: ".whatiuse-section",
-      start: "top top", // Change this according to where your first animation ends
+      start: "top 20%", // Change this according to where your first animation ends
       end: "1930%",
       pin: ".whatiuse-section",
       pinSpacing: false,
@@ -36,7 +36,7 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-      y: "500",
+
       x: "-30%",
     });
 
@@ -57,7 +57,7 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-      y: "500",
+
       x: "45%",
     });
 
@@ -78,7 +78,7 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-      y: "500",
+
       x: "125%",
     });
 
