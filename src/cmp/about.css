@@ -3,11 +3,9 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 200vh;
-  border: 1px solid red;
 }
 
 .about-inner {
-  border: 1px solid green;
   width: 30%;
 }
 
@@ -53,21 +51,17 @@
 }
 
 .whatiuse-section {
-  border: 1px solid blue;
   margin-bottom: 100vh;
 }
 
 .versioncontrol-section {
-  border: 1px solid purple;
   margin-bottom: 100vh;
 }
 
 .contentcreation-section {
-  border: 1px solid yellow;
   margin-bottom: 100vh;
 }
 
 .deployment-section {
-  border: 1px solid pink;
   margin-bottom: 100vh;
 }
