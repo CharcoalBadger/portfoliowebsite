@@ -24,7 +24,26 @@ export default function About() {
       start: "top top", // Change this according to where your first animation ends
       end: "bottom top",
       pin: ".whatiuse-section",
+      markers: true,
+    });
 
+    gsap.to(".versioncontrol-section", {
+      scrollTrigger: {
+        trigger: ".versioncontrol-section",
+        start: "bottom bottom",
+        end: "top top",
+        scrub: true,
+        markers: true,
+      },
+
+      x: "-20%",
+    });
+
+    ScrollTrigger.create({
+      trigger: ".versioncontrol-section",
+      start: "top top", // Change this according to where your first animation ends
+      end: "bottom top",
+      pin: ".versioncontrol-section",
       markers: true,
     });
   }, []);
