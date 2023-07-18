@@ -7,6 +7,8 @@ import "./App.css";
 import Navbar from "./cmp/navbar";
 import Portfoliointro from "./cmp/portfoliointro";
 import Project from "./cmp/project";
+import About from "./cmp/about";
+
 // import Contactform from "./cmp/contactform";
 // import Footer from "./cmp/footer";
 // import { Shaunophone } from "./cmp/shaunophone";
@@ -22,10 +24,12 @@ function App() {
       {/* <Threejstest /> */}
       {/* <Threejsdome /> */}
       <Navbar />
+
       <div className="portfolio-section">
         <Portfoliointro />
       </div>
       <Project />
+      <About />
 
       {/* <Contactform />
 

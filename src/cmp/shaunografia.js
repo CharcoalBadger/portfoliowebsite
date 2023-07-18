@@ -25,11 +25,8 @@ export default function Shaunografia() {
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    var ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambientLight);
-
     var pointLight = new THREE.PointLight(0xffffff, 1);
-    pointLight.position.set(5, 5, 5);
+    pointLight.position.set(0, 400, 100);
     scene.add(pointLight);
 
     const loader = new GLTFLoader();
@@ -146,7 +143,7 @@ export default function Shaunografia() {
           >
             <img
               className="github-logo"
-              src="github-alt-1.svg"
+              src="github-color.svg"
               alt="github logo"
             />
           </a>
@@ -157,7 +154,7 @@ export default function Shaunografia() {
           >
             <img
               className="external-logo"
-              src="external-link-alt.svg"
+              src="external-color.svg"
               alt="external link logo"
             />
           </a>

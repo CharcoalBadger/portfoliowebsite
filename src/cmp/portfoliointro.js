@@ -91,7 +91,8 @@ export default function Portfoliointro() {
     <div className="portfolio-container">
       <div className="parallax" ref={parallaxRef}>
         <p className="ppara">
-          Kia ora! I am a creative front-end developer from New Zealand
+          Kia ora! I am a digital enthusiast with a creative spark from New
+          Zealand.
         </p>
 
         {/* <img src="/leafbr.png" alt="leafbr" className="leafbr" />

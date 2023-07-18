@@ -29,7 +29,7 @@ export default function Sands() {
     scene.add(ambientLight);
 
     var pointLight = new THREE.PointLight(0xffffff, 1);
-    pointLight.position.set(5, 5, 5);
+    pointLight.position.set(0, 400, 100);
     scene.add(pointLight);
 
     const loader = new GLTFLoader();
@@ -148,7 +148,7 @@ export default function Sands() {
           >
             <img
               className="sexternal-logo"
-              src="external-link-alt.svg"
+              src="external-color.svg"
               alt="external link logo"
             />
           </a>

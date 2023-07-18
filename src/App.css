@@ -1,8 +1,9 @@
 :root {
   --body-background: #1f2122;
-  --body-color: #f7f7f9;
+  --body-color: #f4e9cd;
   --body-accent-background: linear-gradient(to top, #68ccc4 0%, #003329 100%);
   --body-accent: #359381;
+  --body-text: #edf2f4;
   --body-filter: brightness(100%);
 
   --heading: clamp(40px, 4vw, 1920px);

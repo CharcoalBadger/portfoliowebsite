@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="navbar-inner">
         <img
           className="navlogo"
-          src={"./willogo-white-final-border-green.png"}
+          src="./willogo-white-final-border-green-cream.png"
           alt="William Douglas Logo"
         />
         <nav className="navigation">

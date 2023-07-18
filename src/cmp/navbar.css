@@ -12,7 +12,6 @@
 
 .navlogo {
   width: 25%;
-  margin-right: 570px;
 }
 
 .navigation {
@@ -22,7 +21,7 @@
 
 .navigation a {
   text-decoration: none;
-  color: var(--body-accent);
+  color: var(--body-color);
   padding: 6px 15px;
   border-radius: 20px;
   margin: 0 10px;
@@ -31,7 +30,7 @@
 
 .navigation a:hover {
   background: var(--body-accent);
-  color: #fff;
+  color: var(--body-color);
 }
 
 @media (min-width: 768px) {
