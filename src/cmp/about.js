@@ -23,7 +23,7 @@ export default function About() {
       trigger: ".about-container",
       start: "top top", // Change this according to where your first animation ends
       end: "bottom top",
-      pin: ".whatiuse-section",
+      pin: ".whatiuse-wrapper",
 
       markers: true,
     });
