@@ -37,7 +37,7 @@ export default function About() {
         markers: true,
       },
 
-      x: "-40%",
+      x: "-30%",
     });
 
     ScrollTrigger.create({
