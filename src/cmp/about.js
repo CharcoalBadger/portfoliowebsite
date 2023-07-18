@@ -32,33 +32,32 @@ export default function About() {
   return (
     <div className="about-container">
       <div className="about-inner">
-        <div className="whatiuse-wrapper">
-          <div className="whatiuse-section">
-            <h3 className="whatiuse">What I Use</h3>
-            <div className="logos-container">
-              <div className="logo-container">
-                <img src="html-color.svg" alt="logo1" className="logo" />
-                <p className="logo-name">HTML</p>
-              </div>
-              <div className="logo-container">
-                <img src="css-color.svg" alt="logo2" className="logo" />
-                <p className="logo-name">CSS</p>
-              </div>
-              <div className="logo-container">
-                <img src="js-color.svg" alt="logo3" className="logo" />
-                <p className="logo-name">JavaScript</p>
-              </div>
-              <div className="logo-container">
-                <img src="gsap-color.svg" alt="logo4" className="logo" />
-                <p className="logo-name">GSAP</p>
-              </div>
-              <div className="logo-container">
-                <img src="react-color.svg" alt="logo4" className="logo" />
-                <p className="logo-name">React</p>
-              </div>
+        <div className="whatiuse-section">
+          <h3 className="whatiuse">What I Use</h3>
+          <div className="logos-container">
+            <div className="logo-container">
+              <img src="html-color.svg" alt="logo1" className="logo" />
+              <p className="logo-name">HTML</p>
+            </div>
+            <div className="logo-container">
+              <img src="css-color.svg" alt="logo2" className="logo" />
+              <p className="logo-name">CSS</p>
+            </div>
+            <div className="logo-container">
+              <img src="js-color.svg" alt="logo3" className="logo" />
+              <p className="logo-name">JavaScript</p>
+            </div>
+            <div className="logo-container">
+              <img src="gsap-color.svg" alt="logo4" className="logo" />
+              <p className="logo-name">GSAP</p>
+            </div>
+            <div className="logo-container">
+              <img src="react-color.svg" alt="logo4" className="logo" />
+              <p className="logo-name">React</p>
             </div>
           </div>
         </div>
+
         <div className="versioncontrol-section">
           <h3 className="versioncontrol">Version Control</h3>
           <div className="logos-container">
