@@ -16,7 +16,7 @@ export default function About() {
         markers: true,
       },
 
-      x: -720,
+      x: -700,
     });
 
     ScrollTrigger.create({
