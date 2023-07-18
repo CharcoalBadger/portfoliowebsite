@@ -69,6 +69,27 @@ export default function About() {
       pinSpacing: false,
       markers: true,
     });
+
+    gsap.to(".deployment-section", {
+      scrollTrigger: {
+        trigger: ".deployment-section",
+        start: "bottom bottom",
+        end: "top top",
+        scrub: true,
+        markers: true,
+      },
+
+      x: "70%",
+    });
+
+    ScrollTrigger.create({
+      trigger: ".deployment-section",
+      start: "top top", // Change this according to where your first animation ends
+      end: "4000%",
+      pin: ".deployment-section",
+      pinSpacing: false,
+      markers: true,
+    });
   }, []);
 
   return (
