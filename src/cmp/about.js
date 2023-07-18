@@ -15,8 +15,8 @@ export default function About() {
         scrub: true,
         markers: true,
       },
-      y: -250,
-      x: -750,
+      y: -200,
+      x: -700,
     });
 
     ScrollTrigger.create({
