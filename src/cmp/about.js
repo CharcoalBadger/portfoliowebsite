@@ -7,23 +7,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useEffect(() => {
-    // gsap.to(".whatiuse-section", {
-    //   scrollTrigger: {
-    //     trigger: ".whatiuse-section",
-    //     start: "bottom bottom",
-    //     end: "top top",
-    //     scrub: true,
-    //     markers: true,
-    //   },
-    //   y: -500,
-    //   x: -50,
-    // });
+    gsap.to(".whatiuse-section", {
+      scrollTrigger: {
+        trigger: ".whatiuse-section",
+        start: "bottom bottom",
+        end: "top top",
+        scrub: true,
+        markers: true,
+      },
+      y: -250,
+      x: -750,
+    });
 
     ScrollTrigger.create({
       trigger: ".about-container",
       start: "top top", // Change this according to where your first animation ends
       end: "bottom top",
-      pin: ".whatiuse",
+      pin: ".whatiuse-section",
 
       markers: true,
     });
