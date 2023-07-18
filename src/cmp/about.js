@@ -20,9 +20,9 @@ export default function About() {
     });
 
     ScrollTrigger.create({
-      trigger: ".about-container",
+      trigger: ".whatiuse-section",
       start: "top top", // Change this according to where your first animation ends
-      end: "400%",
+      end: "1000%",
       pin: ".whatiuse-section",
       pinSpacing: false,
       markers: true,
@@ -41,9 +41,9 @@ export default function About() {
     });
 
     ScrollTrigger.create({
-      trigger: ".about-container",
+      trigger: ".versioncontrol-section",
       start: "top top", // Change this according to where your first animation ends
-      end: "400%",
+      end: "1000%",
       pin: ".versioncontrol-section",
       pinSpacing: false,
       markers: true,
@@ -62,9 +62,9 @@ export default function About() {
     });
 
     ScrollTrigger.create({
-      trigger: ".about-container",
+      trigger: ".contentcreation-section",
       start: "top top", // Change this according to where your first animation ends
-      end: "200%",
+      end: "400%",
       pin: ".contentcreation-section",
       pinSpacing: false,
       markers: true,
