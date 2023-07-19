@@ -9,8 +9,8 @@ import Portfoliointro from "./cmp/portfoliointro";
 import Project from "./cmp/project";
 import About from "./cmp/about";
 
-// import Contactform from "./cmp/contactform";
-// import Footer from "./cmp/footer";
+import Contactform from "./cmp/contactform";
+import Footer from "./cmp/footer";
 // import { Shaunophone } from "./cmp/shaunophone";
 // import Portintro from "./cmp/portintro";
 
@@ -31,9 +31,9 @@ function App() {
       <Project />
       <About />
 
-      {/* <Contactform />
+      <Contactform />
 
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }

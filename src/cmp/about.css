@@ -1,19 +1,48 @@
 .about-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 200vh;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 200vh;
 }
 
-.about-inner {
+.aboutl-inner {
+  position: sticky;
+  top: 0;
+  margin-left: 10vh;
   width: 30%;
 }
 
+.aboutintro-wrapper {
+  border: 1px solid red;
+}
+
+.aboutr-inner {
+  margin-top: 25vh;
+  margin-left: 15vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.aboutpara {
+  text-align: center;
+}
+
+.aboutparaend {
+  text-align: center;
+  margin-bottom: 20vh;
+}
+
+.aboutpara3js {
+  text-align: center;
+}
 .logos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 20px; /* Adjust this value based on your design requirement */
+  gap: 20px;
 }
 
 .logo-container {
@@ -50,7 +79,7 @@
   justify-content: center;
 }
 
-.whatiuse-section {
+/* .whatiuse-section {
   margin-bottom: 100vh;
 }
 
@@ -64,4 +93,4 @@
 
 .deployment-section {
   margin-bottom: 100vh;
-}
+} */

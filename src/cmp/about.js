@@ -7,86 +7,83 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   useEffect(() => {
-    gsap.to(".whatiuse-section", {
-      scrollTrigger: {
-        trigger: ".whatiuse-section",
-        start: "bottom bottom",
-        end: "top top",
-        scrub: true,
-        markers: true,
-      },
-
-      x: "-110%",
-    });
-
+    // gsap.to(".whatiuse-section", {
+    //   scrollTrigger: {
+    //     trigger: ".whatiuse-section",
+    //     start: "bottom bottom",
+    //     end: "top top",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    //   x: "-110%",
+    // });
+    // ScrollTrigger.create({
+    //   trigger: ".whatiuse-section",
+    //   start: "top 10%",
+    //   end: "1930%",
+    //   pin: ".whatiuse-section",
+    //   pinSpacing: false,
+    //   markers: true,
+    // });
+    // gsap.to(".versioncontrol-section", {
+    //   scrollTrigger: {
+    //     trigger: ".versioncontrol-section",
+    //     start: "bottom bottom",
+    //     end: "top top",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    //   x: "-30%",
+    // });
+    // ScrollTrigger.create({
+    //   trigger: ".versioncontrol-section",
+    //   start: "top 10%",
+    //   end: "1420%",
+    //   pin: ".versioncontrol-section",
+    //   pinSpacing: false,
+    //   markers: true,
+    // });
+    // gsap.to(".contentcreation-section", {
+    //   scrollTrigger: {
+    //     trigger: ".contentcreation-section",
+    //     start: "bottom bottom",
+    //     end: "top top",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    //   x: "45%",
+    // });
+    // ScrollTrigger.create({
+    //   trigger: ".contentcreation-section",
+    //   start: "top 10%",
+    //   end: "910%",
+    //   pin: ".contentcreation-section",
+    //   pinSpacing: false,
+    //   markers: true,
+    // });
+    // gsap.to(".deployment-section", {
+    //   scrollTrigger: {
+    //     trigger: ".deployment-section",
+    //     start: "bottom bottom",
+    //     end: "top top",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    //   x: "125%",
+    // });
+    // ScrollTrigger.create({
+    //   trigger: ".deployment-section",
+    //   start: "top 10%",
+    //   end: "400%",
+    //   pin: ".deployment-section",
+    //   pinSpacing: false,
+    //   markers: true,
+    // });
     ScrollTrigger.create({
-      trigger: ".whatiuse-section",
-      start: "top 10%", // Change this according to where your first animation ends
-      end: "1930%",
-      pin: ".whatiuse-section",
-      pinSpacing: false,
-      markers: true,
-    });
-
-    gsap.to(".versioncontrol-section", {
-      scrollTrigger: {
-        trigger: ".versioncontrol-section",
-        start: "bottom bottom",
-        end: "top top",
-        scrub: true,
-        markers: true,
-      },
-
-      x: "-30%",
-    });
-
-    ScrollTrigger.create({
-      trigger: ".versioncontrol-section",
-      start: "top 10%", // Change this according to where your first animation ends
-      end: "1420%",
-      pin: ".versioncontrol-section",
-      pinSpacing: false,
-      markers: true,
-    });
-
-    gsap.to(".contentcreation-section", {
-      scrollTrigger: {
-        trigger: ".contentcreation-section",
-        start: "bottom bottom",
-        end: "top top",
-        scrub: true,
-        markers: true,
-      },
-
-      x: "45%",
-    });
-
-    ScrollTrigger.create({
-      trigger: ".contentcreation-section",
-      start: "top 10%", // Change this according to where your first animation ends
-      end: "910%",
-      pin: ".contentcreation-section",
-      pinSpacing: false,
-      markers: true,
-    });
-
-    gsap.to(".deployment-section", {
-      scrollTrigger: {
-        trigger: ".deployment-section",
-        start: "bottom bottom",
-        end: "top top",
-        scrub: true,
-        markers: true,
-      },
-
-      x: "125%",
-    });
-
-    ScrollTrigger.create({
-      trigger: ".deployment-section",
-      start: "top 10%", // Change this according to where your first animation ends
+      trigger: ".aboutintro-wrapper",
+      start: "top top",
       end: "400%",
-      pin: ".deployment-section",
+      pin: ".aboutintro-wrapper",
       pinSpacing: false,
       markers: true,
     });
@@ -94,7 +91,7 @@ export default function About() {
 
   return (
     <div className="about-container">
-      <div className="about-inner">
+      <div className="aboutl-inner">
         <div className="whatiuse-section">
           <h3 className="whatiuse">What I Use</h3>
           <div className="logos-container">
@@ -155,6 +152,40 @@ export default function About() {
               <p className="logo-name">Netlify</p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="aboutr-inner">
+        <h3 className="aboutintro">A bit bout' me</h3>
+        <p className="aboutpara">
+          Kia ora! I'm William, a passionate front-end developer and a proud
+          Maori from New Zealand. I draw from the vibrant elements of my culture
+          - community, creativity, and innovation - and fuse them with my
+          technical skills.
+        </p>
+        <p className="aboutpara">
+          My tools of choice are HTML, CSS, JavaScript, GSAP, and React, which I
+          use to create engaging, intuitive, and accessible user experiences.
+        </p>
+        <p className="aboutparaend">
+          Beyond the code, I believe in the power of community and diversity.
+          I'm always open to new ideas and approaches that can help shape better
+          digital solutions.
+        </p>
+        <div className="aboutintro-wrapper">
+          <h3 className="aboutintro3js">What im currently learning</h3>
+          <div className="logos-container">
+            <div className="logo-container">
+              <img src="3js-color.svg" alt="logo1" className="logo" />
+              <p className="logo-name">ThreeJS</p>
+            </div>
+            <div className="logo-container">
+              <img src="bl-color.svg" alt="logo2" className="logo" />
+              <p className="logo-name">Blender</p>
+            </div>
+          </div>
+          <p className="aboutpara3js">
+            Use your mouse or finger to interact with this 3D model
+          </p>
         </div>
       </div>
     </div>
