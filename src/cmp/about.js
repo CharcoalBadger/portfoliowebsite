@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Maori3d from "./maori3d";
 import "./about.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -186,6 +187,7 @@ export default function About() {
           <p className="aboutpara3js">
             Use your mouse or finger to interact with this 3D model
           </p>
+          <Maori3d />
         </div>
       </div>
     </div>

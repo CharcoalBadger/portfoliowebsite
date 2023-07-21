@@ -38,6 +38,13 @@
 .aboutpara3js {
   text-align: center;
 }
+
+.aboutintro3js {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logos-container {
   display: flex;
   flex-wrap: wrap;
