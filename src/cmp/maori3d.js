@@ -18,17 +18,20 @@ export default function Maori3d() {
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setClearColor(0xffffff, 0); // Set clear color to white, fully transparent
 
-    const ambientLight = new THREE.AmbientLight(0x404040, 1.0); // soft white light
+    const ambientLight = new THREE.AmbientLight(0x404040, 1.0);
     scene.add(ambientLight);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(0, 1, 1);
+    directionalLight.position.set(0, 0, 0.1);
     scene.add(directionalLight);
 
     const loader = new GLTFLoader();
     loader.load(
-      "/maori.glb",
+      "/earth.glb",
       function (gltf) {
-        gltf.scene.scale.set(0.5, 0.5, 0.5); // Set the scale of the model
+        gltf.scene.scale.set(1.5, 1.5, 1.5); // Set the scale of the model
+        gltf.scene.position.set(0, 1.5, 0);
+        // gltf.scene.rotation.y = 65.8;
+        // gltf.scene.rotation.x = 44.5;
         scene.add(gltf.scene);
       },
       undefined,
