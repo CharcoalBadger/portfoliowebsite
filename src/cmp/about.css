@@ -12,10 +12,6 @@
   width: 30%;
 }
 
-.aboutintro-wrapper {
-  border: 1px solid red;
-}
-
 .aboutr-inner {
   margin-top: 25vh;
   margin-left: 15vh;
@@ -37,6 +33,7 @@
 
 .aboutpara3js {
   text-align: center;
+  margin-bottom: -20vh;
 }
 
 .aboutintro3js {
