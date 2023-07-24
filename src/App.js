@@ -10,7 +10,7 @@ import Project from "./cmp/project";
 import About from "./cmp/about";
 
 import Contactform from "./cmp/contactform";
-import Footer from "./cmp/footer";
+// import Footer from "./cmp/footer";
 // import { Shaunophone } from "./cmp/shaunophone";
 // import Portintro from "./cmp/portintro";
 
@@ -33,7 +33,7 @@ function App() {
 
       <Contactform />
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

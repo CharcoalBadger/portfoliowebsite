@@ -1,11 +1,90 @@
 .contact-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+  margin-top: 20vh;
+  border: 1px solid red;
+  width: 50%;
 }
 
-.contact-image {
-  width: 40%;
-  height: 40%;
+.contact-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 10vh;
+  width: 100%;
+  border: 1px solid green;
 }
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10vh;
+}
+
+h3 {
+  text-align: center;
+  width: 100%;
+}
+
+.contact-container input,
+.contact-container textarea {
+  background: none; /* Removes the background */
+  border: none; /* Removes the border */
+  border-bottom: 1px solid #f4e9cd; /* Adds underline */
+  outline: none; /* Removes the outline that appears on focus */
+  color: #f4e9cd; /* Sets the text color */
+}
+
+.contact-container button {
+  text-decoration: none;
+  color: var(--body-color);
+  padding: 6px 15px;
+  border-radius: 20px;
+  margin: 0 10px;
+  font-weight: 600;
+  border: 1px solid var(--body-color); /* To remove the default browser styles */
+  background: none; /* To remove the default browser styles */
+  cursor: pointer; /* To change the cursor on hover */
+}
+
+/* .contact-container button:hover {
+  background: var(--body-accent);
+  color: var(--body-color);
+  border: 1px solid var(--body-accent);
+} */
+
+/* If you want to add some space between the text in the input and the underline */
+.contact-container input::placeholder,
+.contact-container textarea::placeholder {
+  padding-bottom: 5px;
+}
+
+.contact-logo {
+  width: 50px;
+  margin-right: 1vh;
+}
+
+.social-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--body-color); /* Change the text color */
+  text-decoration: none; /* Remove the underline */
+  cursor: pointer; /* Change the cursor on hover */
+}
+
+/* .social-container a:hover {
+  color: var(
+    --body-accent
+  ); 
+} */
