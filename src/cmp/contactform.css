@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   margin-top: 20vh;
-  height: 90vh;
+  height: 100vh;
   border: 1px solid red;
   width: 50%;
 }
@@ -11,10 +11,9 @@
 .contact-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-left: 10vh;
+  justify-content: center;
+
   width: 100%;
-  border: 1px solid green;
 }
 
 .social-container {
@@ -22,13 +21,14 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  margin-bottom: 7vh;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 10vh;
+  margin-left: 15vh;
 }
 
 h3 {
@@ -88,3 +88,35 @@ h3 {
     --body-accent
   ); 
 } */
+
+.process-container {
+  text-align: center; /* Center the text inside the container */
+}
+
+.process-container p {
+  margin-left: 5vh;
+  margin-right: 5vh;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 1em; /* Add space between buttons */
+}
+
+.tabs button {
+  border: 1px solid #f4e9cd; /* Remove default border */
+  background: none; /* Remove default background */
+  font-size: 1rem;
+  cursor: pointer; /* Change the cursor on hover */
+  transition: color 0.2s ease; /* Smooth transition for color change */
+}
+
+.tabs button:hover {
+  color: var(--body-accent); /* Change color on hover */
+}
+
+.tabs button:focus {
+  color: var(--body-accent); /* Keep the color when focused */
+  outline: none; /* Remove the default browser outline */
+}
