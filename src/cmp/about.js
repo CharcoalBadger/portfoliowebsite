@@ -83,7 +83,7 @@ export default function About() {
     ScrollTrigger.create({
       trigger: ".aboutintro-wrapper",
       start: "top top",
-      end: "400%",
+      end: "bottom bottom",
       pin: ".aboutintro-wrapper",
       pinSpacing: false,
       markers: true,

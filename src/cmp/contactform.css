@@ -1,9 +1,10 @@
 .contact-container {
   display: flex;
-  justify-content: center;
+
   align-items: center;
   flex-direction: column;
   margin-top: 20vh;
+  height: 100vh;
   border: 1px solid red;
   width: 50%;
 }
