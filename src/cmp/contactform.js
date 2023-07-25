@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./contactform.css";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
@@ -13,9 +13,9 @@ const TabContent = ({ children, currentTab, tabName }) => {
 
 export default function Contactform() {
   const [currentTab, setCurrentTab] = useState("Transparency");
+  const containerRef = useRef(null);
 
   const lenis = new Lenis();
-
   lenis.on("scroll", (e) => {
     console.log(e);
   });
@@ -27,28 +27,29 @@ export default function Contactform() {
 
   requestAnimationFrame(raf);
 
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".contact-container",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-      pin: true,
-      anticipatePin: 1,
-      markers: true,
-      toggleActions: "play none none reverse",
-    },
-  });
+  useEffect(() => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        pin: true,
+        markers: true,
+        toggleActions: "play none none reverse",
+      },
+    });
 
-  tl.to(".displacement", {
-    attr: {
-      r: 700,
-    },
-    duration: 2,
-  });
+    tl.to(".displacement", {
+      attr: {
+        r: 700,
+      },
+      duration: 2,
+    });
+  }, []);
 
   return (
-    <div className="contact-container">
+    <div className="contact-container" ref={containerRef}>
       <div className="process-container">
         <h2>What to Expect</h2>
         <div className="tabs">
