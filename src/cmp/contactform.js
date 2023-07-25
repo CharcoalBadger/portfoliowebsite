@@ -31,11 +31,10 @@ export default function Contactform() {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top top",
+        start: "center bottom",
         end: "bottom top",
         scrub: true,
-        pin: true,
-        anticipatePin: 1,
+
         markers: true,
         toggleActions: "play none none reverse",
       },
