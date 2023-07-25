@@ -42,7 +42,7 @@ export default function Contactform() {
 
     tl.to(".displacement", {
       attr: {
-        r: 1300,
+        r: 1200,
       },
       duration: 2,
     });
@@ -182,7 +182,7 @@ export default function Contactform() {
         <image
           // style={{ transform: "translateX(-20%)" }}
           // href="https://images.unsplash.com/photo-1617957718587-60a442884bee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
-          href="/gradient-1.png"
+          href="/gradient-2.png"
           width="100%"
           height="100%"
           mask="url(#circleMask)"
