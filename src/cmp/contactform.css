@@ -45,6 +45,10 @@ h3 {
   color: #f4e9cd; /* Sets the text color */
 }
 
+.contact-container ::placeholder {
+  color: var(--body-color);
+}
+
 .contact-container button {
   text-decoration: none;
   color: var(--body-color);
@@ -57,11 +61,11 @@ h3 {
   cursor: pointer; /* To change the cursor on hover */
 }
 
-/* .contact-container button:hover {
+.contact-container button:hover {
   background: var(--body-accent);
   color: var(--body-color);
-  border: 1px solid var(--body-accent);
-} */
+  border: 1px solid var(--body-color);
+}
 
 /* If you want to add some space between the text in the input and the underline */
 .contact-container input::placeholder,
@@ -84,9 +88,7 @@ h3 {
 }
 
 /* .social-container a:hover {
-  color: var(
-    --body-accent
-  ); 
+  color: var(--body-color);
 } */
 
 .process-container {
@@ -96,6 +98,10 @@ h3 {
 .process-container p {
   margin-left: 5vh;
   margin-right: 5vh;
+}
+
+.process-container h2 {
+  color: var(--body-accent);
 }
 
 .tabs {
@@ -113,12 +119,15 @@ h3 {
 }
 
 .tabs button:hover {
-  color: var(--body-accent); /* Change color on hover */
+  background: var(--body-accent);
+  color: var(--body-color);
+  border: 1px solid var(--body-color);
 }
 
 .tabs button:focus {
-  color: var(--body-accent); /* Keep the color when focused */
-  outline: none; /* Remove the default browser outline */
+  background: var(--body-accent);
+  color: var(--body-color);
+  border: 1px solid var(--body-color);
 }
 
 .displacement {

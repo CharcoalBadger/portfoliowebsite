@@ -98,7 +98,11 @@ export default function Contactform() {
             </a>
           </div>
           <div className="contact-logo-container">
-            <a href="https://github.com/yourusername">
+            <a
+              href="https://github.com/CharcoalBadger"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src="github-color.svg"
                 alt="logo8"
@@ -108,7 +112,11 @@ export default function Contactform() {
             </a>
           </div>
           <div className="contact-logo-container">
-            <a href="https://www.linkedin.com/in/yourusername">
+            <a
+              href="https://www.linkedin.com/in/williamdouglas7/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src="linkedin-color.svg"
                 alt="logo9"
