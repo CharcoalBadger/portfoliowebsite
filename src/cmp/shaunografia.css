@@ -16,6 +16,11 @@
   justify-content: space-between;
 }
 
+.text-container h1,
+.text-container h3 {
+  color: var(--body-accent);
+}
+
 .shaunografia-container {
   position: relative;
   width: 60%;

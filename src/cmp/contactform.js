@@ -60,8 +60,6 @@ export default function Contactform() {
         start: "center bottom",
         end: "bottom top",
         scrub: true,
-
-        markers: true,
         toggleActions: "play none none reverse",
       },
     });

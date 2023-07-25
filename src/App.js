@@ -5,10 +5,10 @@ import "./App.css";
 // import Threejsbasic from "./cmp/3jsbasic";
 // import Threejsfiber from "./cmp/3jsfiber";
 import Navbar from "./cmp/navbar";
-import Portfoliointro from "./cmp/portfoliointro";
+// import Portfoliointro from "./cmp/portfoliointro";
 import Project from "./cmp/project";
 import About from "./cmp/about";
-
+import PanoramicImage from "./cmp/panoramicimage";
 import Contactform from "./cmp/contactform";
 import Footer from "./cmp/footer";
 // import { Shaunophone } from "./cmp/shaunophone";
@@ -24,10 +24,10 @@ function App() {
       {/* <Threejstest /> */}
       {/* <Threejsdome /> */}
       <Navbar />
-
-      <div className="portfolio-section">
+      <PanoramicImage />
+      {/* <div className="portfolio-section">
         <Portfoliointro />
-      </div>
+      </div> */}
       <Project />
       <About />
 

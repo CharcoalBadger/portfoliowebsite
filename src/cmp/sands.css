@@ -17,6 +17,11 @@
   justify-content: space-between;
 }
 
+.stext-container h1,
+.stext-container h3 {
+  color: var(--body-accent);
+}
+
 .sands-container {
   position: relative;
   width: 60%;

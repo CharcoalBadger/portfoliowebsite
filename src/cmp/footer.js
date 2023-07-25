@@ -7,6 +7,7 @@ export default function Footer() {
       <p>Privacy Policy</p>
       <p>Copyright</p>
       <p>Sitemap</p>
+      <p>Credits</p>
     </div>
   );
 }

@@ -2,14 +2,15 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import "./panoramicimage.css";
+import { gsap } from "gsap";
 
 function PanoramicImage() {
-  const containerRef = useRef(null);
+  const panocontainerRef = useRef(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!panocontainerRef.current) return;
 
-    const container = containerRef.current;
+    const container = panocontainerRef.current;
 
     // Create the scene, camera, and renderer
     const scene = new THREE.Scene();
@@ -84,6 +85,14 @@ function PanoramicImage() {
 
     animate(0);
 
+    gsap.to(".scroll-arrow", {
+      y: "-=20", // move up by 20px
+      repeat: -1, // repeat indefinitely
+      yoyo: true, // reverse the animation on each iteration
+      ease: "power1.inOut", // easing function for smooth animation
+      duration: 0.8, // animation duration
+    });
+
     // Don't forget to cleanup on component unmount
     return () => {
       window.removeEventListener("resize", onWindowResize);
@@ -94,14 +103,11 @@ function PanoramicImage() {
   }, []);
 
   return (
-    <div id="container">
-      <div id="rendererContainer" ref={containerRef} />
-      <div className="overlay">
-        <div className="inner">
-          <div className="text-container">
-            <p>Click and drag with your mouse or swipe with your finger</p>
-          </div>
-        </div>
+    <div className="pano-container">
+      <div className="pano-wrapper">
+        <div className="panorendererContainer" ref={panocontainerRef} />
+        <p className="pano-text">Use your mouse or finger to explore</p>
+        <div className="scroll-arrow"></div>
       </div>
     </div>
   );

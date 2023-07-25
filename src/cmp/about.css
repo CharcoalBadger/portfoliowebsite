@@ -22,6 +22,10 @@
   flex-direction: column;
 }
 
+.aboutintro {
+  color: var(--body-accent);
+}
+
 .aboutpara {
   text-align: center;
 }
@@ -40,6 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--body-accent);
 }
 
 .logos-container {
@@ -63,22 +68,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--body-accent);
 }
 
 .versioncontrol {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--body-accent);
 }
 
 .contentcreation {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--body-accent);
 }
 
 .deployment {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--body-accent);
 }
