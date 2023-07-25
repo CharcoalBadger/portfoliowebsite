@@ -14,6 +14,32 @@ const TabContent = ({ children, currentTab, tabName }) => {
 export default function Contactform() {
   const [currentTab, setCurrentTab] = useState("Transparency");
   const containerRef = useRef(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    try {
+      await fetch("https://formspree.io/f/mwkdpzly", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      form.reset(); // reset the form
+      setSubmitting(false); // reset the submitting state
+    } catch (error) {
+      console.error("Error:", error);
+      setSubmitting(false); // reset the submitting state
+    }
+  };
 
   const lenis = new Lenis();
   lenis.on("scroll", (e) => {
@@ -126,7 +152,12 @@ export default function Contactform() {
             </a>
           </div>
         </div>
-        {/* <form name="contact" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          action="https://formspree.io/f/mwkdpzly"
+          method="POST"
+          onSubmit={handleFormSubmit}
+        >
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <input
@@ -152,38 +183,7 @@ export default function Contactform() {
             ></textarea>
           </p>
           <p>
-            <button type="submit">Send</button>
-          </p>
-        </form> */}
-        <form name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="Contact" />
-
-          <p>
-            <label>
-              Your Name: <input type="text" name="name" />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your Email: <input type="email" name="email" />
-            </label>
-          </p>
-          <p>
-            <label>
-              Your Role:{" "}
-              <select name="role[]" multiple>
-                <option value="leader">Leader</option>
-                <option value="follower">Follower</option>
-              </select>
-            </label>
-          </p>
-          <p>
-            <label>
-              Message: <textarea name="message"></textarea>
-            </label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
+            <button type="submit">{submitting ? "Thank you!" : "Send"} </button>
           </p>
         </form>
       </div>
