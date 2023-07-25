@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import "./contactform.css";
+import Lenis from "@studio-freight/lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const TabContent = ({ children, currentTab, tabName }) => {
   if (currentTab !== tabName) return null;
@@ -8,6 +13,39 @@ const TabContent = ({ children, currentTab, tabName }) => {
 
 export default function Contactform() {
   const [currentTab, setCurrentTab] = useState("Transparency");
+
+  const lenis = new Lenis();
+
+  lenis.on("scroll", (e) => {
+    console.log(e);
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "contact-container",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      pin: true,
+      anticipatePin: 1,
+      markers: true,
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  tl.to(".displacement", {
+    attr: {
+      r: 700,
+    },
+    duration: 2,
+  });
 
   return (
     <div className="contact-container">
@@ -109,6 +147,44 @@ export default function Contactform() {
           </p>
         </form>
       </div>
+      <svg
+        viewBox="0 0 1920 960"
+        fill="none"
+        preserveAspectRatio="xMidYMin slice"
+      >
+        <defs>
+          <filter id="displacementFilter">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.03"
+              numOctaves="1"
+              result="noise"
+            />
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="noise"
+              scale="50"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
+          </filter>
+          <mask id="circleMask">
+            <circle
+              cx="600" //x position
+              cy="800" //y position
+              r="0" //radius
+              fill="white"
+              className="displacement"
+            />
+          </mask>
+        </defs>
+        <rect
+          fill="#2DA639"
+          width="100%"
+          height="100%"
+          mask="url(#circleMask)"
+        />
+      </svg>
     </div>
   );
 }

@@ -86,7 +86,6 @@ export default function About() {
       end: "140%",
       pin: ".aboutintro-wrapper",
       pinSpacing: false,
-      markers: true,
     });
   }, []);
 
