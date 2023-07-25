@@ -29,8 +29,8 @@ export default function Contactform() {
 
   let tl = gsap.timeline({
     scrollTrigger: {
-      trigger: "contact-container",
-      start: "top top",
+      trigger: ".contact-container",
+      start: "top center",
       end: "bottom top",
       scrub: true,
       pin: true,
