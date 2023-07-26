@@ -3,9 +3,26 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as THREE from "three";
 import "./shaunografia.css";
 import Logoshaun from "./3dlogoshaun";
+import Lenis from "@studio-freight/lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Shaunografia() {
   const containerRef = useRef();
+
+  const lenis = new Lenis();
+  lenis.on("scroll", (e) => {
+    console.log(e);
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -109,6 +126,23 @@ export default function Shaunografia() {
     }
     window.addEventListener("resize", handleResize);
 
+    let tlsh = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".shparent-container",
+        start: "center bottom",
+        end: "bottom center",
+        scrub: true,
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    tlsh.to(".shdisplacement", {
+      attr: {
+        r: 450,
+      },
+      duration: 2,
+    });
+
     return () => {
       window.removeEventListener("resize", handleResize);
       container.removeChild(renderer.domElement);
@@ -116,7 +150,55 @@ export default function Shaunografia() {
   }, []);
 
   return (
-    <div className="parent-container">
+    <div className="shparent-container">
+      <svg
+        viewBox="0 0 1920 960"
+        fill="none"
+        preserveAspectRatio="xMidYMin slice"
+      >
+        <defs>
+          <filter id="shdisplacementFilter">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.01"
+              numOctaves="1"
+              result="noise"
+            />
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="noise"
+              scale="50"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
+          </filter>
+          <mask id="shcircleMask">
+            <circle
+              cx="960" //x position
+              cy="480" //y position
+              r="0" //radius
+              fill="white"
+              className="shdisplacement"
+            />
+          </mask>
+        </defs>
+        <image
+          style={{ transform: "translateX(20%)" }}
+          // href="https://images.unsplash.com/photo-1617957718587-60a442884bee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
+          href="/gradient-rad.png"
+          width="100%"
+          height="100%"
+          mask="url(#shcircleMask)"
+        />
+        {/* <rect
+        
+          fill="#2DA639"
+          width="100%"
+          height="100%"
+          mask="url(#circleMask)"
+        /> */}
+      </svg>
+
       <div className="text-container">
         <Logoshaun />
         <h1>Shaunografia</h1>

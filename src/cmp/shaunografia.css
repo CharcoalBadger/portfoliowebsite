@@ -1,4 +1,4 @@
-.parent-container {
+.shparent-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,4 +41,15 @@
 .external-logo {
   width: 15%;
   filter: var(--body-filter);
+}
+
+.shdisplacement {
+  filter: url(#shdisplacementFilter);
+}
+
+.shparent-container svg {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  z-index: -1;
 }
