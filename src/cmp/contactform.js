@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "./contactform.css";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
@@ -53,24 +53,24 @@ export default function Contactform() {
 
   requestAnimationFrame(raf);
 
-  useEffect(() => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "center bottom",
-        end: "bottom top",
-        scrub: true,
-        toggleActions: "play none none reverse",
-      },
-    });
+  // useEffect(() => {
+  //   let tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: containerRef.current,
+  //       start: "center bottom",
+  //       end: "bottom top",
+  //       scrub: true,
+  //       toggleActions: "play none none reverse",
+  //     },
+  //   });
 
-    tl.to(".displacement", {
-      attr: {
-        r: 1200,
-      },
-      duration: 2,
-    });
-  }, []);
+  //   tl.to(".displacement", {
+  //     attr: {
+  //       r: 1200,
+  //     },
+  //     duration: 2,
+  //   });
+  // }, []);
 
   return (
     <div className="contact-container" ref={containerRef}>
@@ -185,7 +185,7 @@ export default function Contactform() {
           </p>
         </form>
       </div>
-      <svg
+      {/* <svg
         viewBox="0 0 1920 960"
         fill="none"
         preserveAspectRatio="xMidYMin slice"
@@ -224,13 +224,7 @@ export default function Contactform() {
           height="100%"
           mask="url(#circleMask)"
         />
-        {/* <rect
-          fill="#2DA639"
-          width="100%"
-          height="100%"
-          mask="url(#circleMask)"
-        /> */}
-      </svg>
+      </svg> */}
     </div>
   );
 }
