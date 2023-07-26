@@ -3,6 +3,8 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import "./panoramicimage.css";
 import { gsap } from "gsap";
+import createMultiLineText from "./createmultilinetext";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
 
 function PanoramicImage() {
   const panocontainerRef = useRef(null);
@@ -27,7 +29,7 @@ function PanoramicImage() {
 
     // Load the panoramic image and create a texture
     const loader = new THREE.TextureLoader();
-    const texture = loader.load("/nzpano.jpg");
+    const texture = loader.load("/pano-final-dark-1.png");
 
     // Create a spherical geometry and map the texture to it
     const geometry = new THREE.SphereGeometry(500, 60, 40);
@@ -42,6 +44,30 @@ function PanoramicImage() {
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
+    let font;
+    const fontLoader = new FontLoader();
+
+    fontLoader.load(
+      "/fonts/helvetiker_regular.typeface.json",
+      function (response) {
+        font = response;
+
+        // Now you can create the text mesh and add it to the scene
+        const textMesh = createMultiLineText(
+          scene,
+          font,
+          "Kia ora! I am a digital enthusiast with a creative spark from New Zealand.",
+          {
+            x: 0,
+            y: 0,
+            z: -0.5,
+          }
+        );
+
+        // Add textMesh to scene
+        scene.add(textMesh);
+      }
+    );
     // Set up the camera and controls
     camera.position.set(0, 0, 0.1);
 
@@ -70,7 +96,7 @@ function PanoramicImage() {
 
     // Animation loop
     let lastTime = 0;
-    const rotationSpeed = 0.00005;
+    const rotationSpeed = 0.00001;
 
     function animate(time) {
       const delta = time - lastTime;
@@ -106,7 +132,7 @@ function PanoramicImage() {
     <div className="pano-container">
       <div className="pano-wrapper">
         <div className="panorendererContainer" ref={panocontainerRef} />
-        <p className="pano-text">Use your mouse or finger to explore</p>
+        <p className="pano-text">Drag your mouse or finger to explore</p>
         <div className="scroll-arrow"></div>
       </div>
     </div>

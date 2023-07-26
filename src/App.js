@@ -1,38 +1,53 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./App.css";
-// import Threejstest from "./cmp/3jstest";
-// import Threejsdome from "./cmp/3jsdome";
-// import Threejsbasic from "./cmp/3jsbasic";
-// import Threejsfiber from "./cmp/3jsfiber";
+import Lenis from "@studio-freight/lenis";
 import Navbar from "./cmp/navbar";
-// import Portfoliointro from "./cmp/portfoliointro";
 import Project from "./cmp/project";
 import About from "./cmp/about";
 import PanoramicImage from "./cmp/panoramicimage";
 import Contactform from "./cmp/contactform";
 import Footer from "./cmp/footer";
-// import { Shaunophone } from "./cmp/shaunophone";
-// import Portintro from "./cmp/portintro";
 
 function App() {
-  // const [isDarkMode, setDarkMode] = useState(true);
+  const aboutRef = useRef(null);
+  const workRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const lenis = new Lenis();
+  lenis.on("scroll", (e) => {
+    console.log(e);
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  const handleNavClick = (ref) => {
+    lenis.scrollTo(ref.current);
+  };
 
   return (
     <div>
-      {/* <Threejsbasic /> */}
-      {/* <Threejsfiber /> */}
-      {/* <Threejstest /> */}
-      {/* <Threejsdome /> */}
-      <Navbar />
+      <Navbar
+        onNavClick={handleNavClick}
+        aboutRef={aboutRef}
+        workRef={workRef}
+        contactRef={contactRef}
+      />
+
       <PanoramicImage />
-      {/* <div className="portfolio-section">
-        <Portfoliointro />
-      </div> */}
-      <Project />
-      <About />
-
-      <Contactform />
-
+      <div className="workapp" ref={workRef}>
+        <Project />
+      </div>
+      <div className="aboutapp" ref={aboutRef}>
+        <About />
+      </div>
+      <div className="contact" ref={contactRef}>
+        <Contactform />
+      </div>
       <Footer />
     </div>
   );

@@ -36,9 +36,8 @@
   transform: translateX(-50%);
   width: 50px; /* Adjust this value as necessary */
   height: 50px; /* Adjust this value as necessary */
-  background: url("C:/Users/William/Desktop/portfoliowebsite/public/downarrow.svg")
+  background: url("C:/Users/William/Desktop/portfoliowebsite/public/downarrow1.svg")
     no-repeat center center;
   background-size: contain;
   z-index: 10;
-  filter: invert(100%) hue-rotate(180deg);
 }

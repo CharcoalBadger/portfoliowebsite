@@ -8,6 +8,7 @@ export default function createMultiLineText(scene, font, text, position) {
   textMesh.anchorX = "center";
   textMesh.anchorY = "middle";
   textMesh.position.set(position.x, position.y, position.z);
+  textMesh.color = 0xf4e9cd;
   textMesh.frustumCulled = false; // Set frustumCulled to false
 
   scene.add(textMesh);
