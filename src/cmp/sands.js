@@ -95,75 +95,65 @@ export default function Sands() {
 
     observer.observe(container);
 
-    loader.load(
-      "/laptop1.glb",
-      (gltf) => {
-        console.log("GLB loaded successfully", gltf);
-        const model = gltf.scene;
+    loader.load("/laptop1.glb", (gltf) => {
+      const model = gltf.scene;
 
-        // Apply screen texture
-        model.traverse((node) => {
-          // gltf.scene.traverse((node) => {
-          //   if (node.isMesh) {
-          //     console.log(
-          //       "Found a mesh node:",
-          //       node.name,
-          //       "with material:",
-          //       node.material.name
-          //     );
-          //   }
-          // });
+      // Apply screen texture
+      model.traverse((node) => {
+        // gltf.scene.traverse((node) => {
+        //   if (node.isMesh) {
+        //     console.log(
+        //       "Found a mesh node:",
+        //       node.name,
+        //       "with material:",
+        //       node.material.name
+        //     );
+        //   }
+        // });
 
-          if (node.isMesh && node.material.name === "material_2") {
-            // Replace 'ScreenMaterial' with the actual material name
-            node.material.map = screenTexture;
-            node.material.needsUpdate = true;
-          }
-          let rotationSpeed = 0.00001; // adjust as needed
-          let lastTouchX = null;
-
-          function rotateModel(e) {
-            let currentX =
-              e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
-            if (lastTouchX !== null) {
-              let deltaX = currentX - lastTouchX;
-              model.rotation.y += deltaX * rotationSpeed; // rotate on y-axis
-            }
-            lastTouchX = currentX;
-          }
-
-          container.addEventListener("mousemove", rotateModel);
-          container.addEventListener("touchmove", rotateModel);
-          return () => {
-            container.removeEventListener("mousemove", rotateModel);
-            container.removeEventListener("touchmove", rotateModel);
-            // other cleanup code...
-          };
-        });
-
-        scene.add(model);
-
-        model.position.set(0.1, -30, -300);
-        model.scale.set(2.5, 2.5, 1.5);
-        model.rotation.y = 66.2;
-        model.rotation.x = 44.5;
-
-        function animate() {
-          if (video.readyState === video.HAVE_ENOUGH_DATA) {
-            screenTexture.needsUpdate = true;
-          }
-          requestAnimationFrame(animate);
-          renderer.render(scene, camera);
+        if (node.isMesh && node.material.name === "material_2") {
+          // Replace 'ScreenMaterial' with the actual material name
+          node.material.map = screenTexture;
+          node.material.needsUpdate = true;
         }
-        animate();
-      },
-      (xhr) => {
-        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-      },
-      (error) => {
-        console.error("Error loading GLB", error);
+        let rotationSpeed = 0.00001; // adjust as needed
+        let lastTouchX = null;
+
+        function rotateModel(e) {
+          let currentX =
+            e.type === "touchmove" ? e.touches[0].clientX : e.clientX;
+          if (lastTouchX !== null) {
+            let deltaX = currentX - lastTouchX;
+            model.rotation.y += deltaX * rotationSpeed; // rotate on y-axis
+          }
+          lastTouchX = currentX;
+        }
+
+        container.addEventListener("mousemove", rotateModel);
+        container.addEventListener("touchmove", rotateModel);
+        return () => {
+          container.removeEventListener("mousemove", rotateModel);
+          container.removeEventListener("touchmove", rotateModel);
+          // other cleanup code...
+        };
+      });
+
+      scene.add(model);
+
+      model.position.set(0.1, -30, -300);
+      model.scale.set(2.5, 2.5, 1.5);
+      model.rotation.y = 66.2;
+      model.rotation.x = 44.5;
+
+      function animate() {
+        if (video.readyState === video.HAVE_ENOUGH_DATA) {
+          screenTexture.needsUpdate = true;
+        }
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
       }
-    );
+      animate();
+    });
 
     function handleResize() {
       camera.aspect = container.clientWidth / container.clientHeight;

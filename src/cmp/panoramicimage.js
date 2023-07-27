@@ -30,7 +30,7 @@ function PanoramicImage() {
     // Load the panoramic image and create a texture
     const loader = new THREE.TextureLoader();
     loader.load(
-      "/pano-final-dark-3.png",
+      "/pano-final-dark-2048.png",
       function (texture) {
         // Once the texture has loaded, create the sphere and add it to the scene
         const geometry = new THREE.SphereGeometry(500, 60, 40);
@@ -117,6 +117,20 @@ function PanoramicImage() {
     }
 
     window.addEventListener("resize", onWindowResize, false);
+
+    gsap.fromTo(
+      ".pano-container",
+      {
+        "clip-path": "(0 50%, 100% 50%, 100% 50%, 0 50%)",
+        opacity: 0,
+      },
+      {
+        "clip-path": "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        ease: "power1.inOut",
+        duration: 3,
+      }
+    );
 
     gsap.to(".scroll-arrow", {
       y: "-=20", // move up by 20px

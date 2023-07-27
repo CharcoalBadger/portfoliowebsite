@@ -29,7 +29,6 @@ const Maori3d = () => {
     const divHeight = mount.clientHeight;
 
     renderer.setSize(divWidth, divHeight);
-    console.log(`Renderer size set to ${divWidth} x ${divHeight}`);
 
     camera.aspect = divWidth / divHeight;
     camera.updateProjectionMatrix();

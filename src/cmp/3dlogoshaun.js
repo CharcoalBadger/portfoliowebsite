@@ -32,35 +32,25 @@ export default function Logoshaun() {
 
     // Load 3D model
     const loader = new GLTFLoader();
-    loader.load(
-      "/shaunografia-logo-7.glb",
-      (gltf) => {
-        console.log("GLB loaded successfully", gltf);
-        const model = gltf.scene;
-        scene.add(model);
+    loader.load("/shaunografia-logo-7.glb", (gltf) => {
+      const model = gltf.scene;
+      scene.add(model);
 
-        // Position and scale the model as needed
-        model.position.set(0, -0.4, -1);
-        model.scale.set(2, 2, 2);
+      // Position and scale the model as needed
+      model.position.set(0, -0.4, -1);
+      model.scale.set(2, 2, 2);
 
-        // Set up animation using GSAP
-        const tl = gsap.timeline({ repeat: -1 });
-        tl.to(model.rotation, { y: Math.PI * 2, duration: 4 });
+      // Set up animation using GSAP
+      const tl = gsap.timeline({ repeat: -1 });
+      tl.to(model.rotation, { y: Math.PI * 2, duration: 4 });
 
-        // Render loop
-        function animate() {
-          requestAnimationFrame(animate);
-          renderer.render(scene, camera);
-        }
-        animate();
-      },
-      (xhr) => {
-        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-      },
-      (error) => {
-        console.error("Error loading GLB", error);
+      // Render loop
+      function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
       }
-    );
+      animate();
+    });
 
     // Resize handling
     function handleResize() {
