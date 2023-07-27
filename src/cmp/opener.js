@@ -8,7 +8,7 @@ export default function Opener() {
     // Simulate a loading delay
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1000);
   }, []);
 
   if (loading) {
