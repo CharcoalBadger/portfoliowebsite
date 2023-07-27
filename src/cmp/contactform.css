@@ -49,6 +49,10 @@ h3 {
   color: var(--body-color);
 }
 
+.contact-title {
+  color: var(--body-accent);
+}
+
 .contact-container button {
   text-decoration: none;
   color: var(--body-color);

@@ -52,8 +52,48 @@ export default function Sands() {
     const loader = new GLTFLoader();
 
     // Load the screen texture
-    const textureLoader = new THREE.TextureLoader();
-    const screenTexture = textureLoader.load("/sandsimage.png");
+    // const textureLoader = new THREE.TextureLoader();
+    // const screenTexture = textureLoader.load("/shaunimage.png");
+
+    // Prepare the video element
+    const video = document.createElement("video");
+    video.loop = true;
+    video.muted = true;
+    video.preload = "none"; // Prevents the browser from preloading the video
+
+    // Video texture needs to be prepared but don't set the video source yet
+    const screenTexture = new THREE.VideoTexture(video);
+
+    let playPromise;
+
+    // Intersection Observer setup
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Set the video source and play the video when it becomes visible
+          video.src = "/sands-recording-5k.mp4";
+          playPromise = video.play();
+        } else {
+          // Pause the video when it's not visible
+          if (playPromise) {
+            playPromise.then(
+              () => video.pause(),
+              (error) => console.error(error)
+            );
+            // Optional: Remove the video source when it's not visible
+            // video.src = '';
+          }
+        }
+      });
+    }, observerOptions);
+
+    observer.observe(container);
 
     loader.load(
       "/laptop1.glb",
@@ -109,6 +149,9 @@ export default function Sands() {
         model.rotation.x = 44.5;
 
         function animate() {
+          if (video.readyState === video.HAVE_ENOUGH_DATA) {
+            screenTexture.needsUpdate = true;
+          }
           requestAnimationFrame(animate);
           renderer.render(scene, camera);
         }
@@ -147,6 +190,7 @@ export default function Sands() {
     });
 
     return () => {
+      observer.unobserve(container);
       window.removeEventListener("resize", handleResize);
       container.removeChild(renderer.domElement);
     };

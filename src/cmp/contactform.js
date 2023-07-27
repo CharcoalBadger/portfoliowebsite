@@ -112,7 +112,7 @@ export default function Contactform() {
         </TabContent>
       </div>
 
-      <h3>Let's work together</h3>
+      <h3 className="contact-title">Let's work together</h3>
       <div className="contact-inner">
         <div className="social-container">
           <div className="contact-logo-container">
