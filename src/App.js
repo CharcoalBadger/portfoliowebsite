@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import "./App.css";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "./cmp/navbar";
@@ -7,20 +7,20 @@ import About from "./cmp/about";
 import PanoramicImage from "./cmp/panoramicimage";
 import Contactform from "./cmp/contactform";
 import Footer from "./cmp/footer";
-import Opener from "./cmp/opener";
+// import Opener from "./cmp/opener";
 
 function App() {
   const aboutRef = useRef(null);
   const workRef = useRef(null);
   const contactRef = useRef(null);
 
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 5000);
+  // }, []);
 
   const lenis = new Lenis();
   lenis.on("scroll", (e) => {
@@ -38,9 +38,9 @@ function App() {
     lenis.scrollTo(ref.current);
   };
 
-  if (loading) {
-    return <Opener />; // If the page is loading, render the Opener component
-  }
+  // if (loading) {
+  //   return <Opener />; // If the page is loading, render the Opener component
+  // }
 
   return (
     <div>
@@ -50,7 +50,6 @@ function App() {
         workRef={workRef}
         contactRef={contactRef}
       />
-
       <PanoramicImage />
       <div className="workapp" ref={workRef}>
         <Project />

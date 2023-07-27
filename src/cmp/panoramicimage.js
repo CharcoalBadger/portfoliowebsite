@@ -29,20 +29,44 @@ function PanoramicImage() {
 
     // Load the panoramic image and create a texture
     const loader = new THREE.TextureLoader();
-    const texture = loader.load("/pano-final-dark-3.png");
+    loader.load(
+      "/pano-final-dark-3.png",
+      function (texture) {
+        // Once the texture has loaded, create the sphere and add it to the scene
+        const geometry = new THREE.SphereGeometry(500, 60, 40);
 
-    // Create a spherical geometry and map the texture to it
-    const geometry = new THREE.SphereGeometry(500, 60, 40);
+        // Flip the geometry inside out
+        geometry.scale(-1, 1, 1);
 
-    // Flip the geometry inside out
-    geometry.scale(-1, 1, 1);
+        const material = new THREE.MeshBasicMaterial({
+          map: texture,
+        });
 
-    const material = new THREE.MeshBasicMaterial({
-      map: texture,
-    });
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
 
-    const sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere);
+        // Animation loop
+        let lastTime = 0;
+        const rotationSpeed = 0.00001;
+
+        function animate(time) {
+          const delta = time - lastTime;
+          lastTime = time;
+          requestAnimationFrame(animate);
+
+          sphere.rotation.y += rotationSpeed * delta;
+
+          controls.update();
+          renderer.render(scene, camera);
+        }
+
+        animate(0);
+      },
+      undefined,
+      function (error) {
+        console.error("An error occurred while loading the texture", error);
+      }
+    );
 
     let font;
     const fontLoader = new FontLoader();
@@ -93,23 +117,6 @@ function PanoramicImage() {
     }
 
     window.addEventListener("resize", onWindowResize, false);
-
-    // Animation loop
-    let lastTime = 0;
-    const rotationSpeed = 0.00001;
-
-    function animate(time) {
-      const delta = time - lastTime;
-      lastTime = time;
-      requestAnimationFrame(animate);
-
-      sphere.rotation.y += rotationSpeed * delta;
-
-      controls.update();
-      renderer.render(scene, camera);
-    }
-
-    animate(0);
 
     gsap.to(".scroll-arrow", {
       y: "-=20", // move up by 20px
