@@ -32,6 +32,7 @@ function PanoramicImage() {
     loader.load(
       "/pano-final-dark-3.png",
       function (texture) {
+        let isRendered = false;
         // Once the texture has loaded, create the sphere and add it to the scene
         const geometry = new THREE.SphereGeometry(500, 60, 40);
 
@@ -58,6 +59,10 @@ function PanoramicImage() {
 
           controls.update();
           renderer.render(scene, camera);
+          if (!isRendered) {
+            console.log("The panoramic image has been rendered.");
+            isRendered = true;
+          }
         }
 
         animate(0);
