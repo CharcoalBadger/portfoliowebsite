@@ -7,7 +7,6 @@ import About from "./cmp/about";
 import PanoramicImage from "./cmp/panoramicimage";
 import Contactform from "./cmp/contactform";
 import Footer from "./cmp/footer";
-// import Opener from "./cmp/opener";
 import Preloader from "./cmp/preloader";
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
     const timer = setTimeout(() => {
       timerDone = true;
       checkAndSetLoading();
-    }, 10000); // 10000 milliseconds equals to 10 seconds
+    }, 1300); // 10000 milliseconds equals to 10 seconds
 
     return () => clearTimeout(timer); // this will clear the timer when the component is unmounted
   }, []);
