@@ -14,14 +14,6 @@ function App() {
   const workRef = useRef(null);
   const contactRef = useRef(null);
 
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 5000);
-  // }, []);
-
   const lenis = new Lenis();
   lenis.on("scroll", (e) => {
     console.log(e);
@@ -37,10 +29,6 @@ function App() {
   const handleNavClick = (ref) => {
     lenis.scrollTo(ref.current);
   };
-
-  // if (loading) {
-  //   return <Opener />; // If the page is loading, render the Opener component
-  // }
 
   return (
     <div>

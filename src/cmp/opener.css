@@ -1,9 +1,13 @@
 .loading-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--body-background);
+  position: fixed;
+  z-index: 999900; /* increase this if needed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(
+    --body-background
+  ); /* add a background color to cover everything underneath */
 }
 
 .container {
@@ -12,125 +16,5 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-}
-
-.signature {
-  font-family: "Pacifico", cursive;
-  font-size: 5em;
-  width: 14em;
-  height: 2.2em;
-  position: relative;
-  color: #333;
-}
-
-.signature > div {
-  position: absolute;
-  -webkit-transform: translateY(1.5em);
-  transform: translateY(1.5em);
-  opacity: 0;
-}
-
-.signature .w {
-  -webkit-animation: signature 1s 1s forwards;
-  animation: signature 1s 1s forwards;
-}
-.signature .i {
-  -webkit-animation: signature 1s 1.5s forwards;
-  animation: signature 1s 1.5s forwards;
-}
-.signature .l1 {
-  -webkit-animation: signature 1s 2s forwards;
-  animation: signature 1s 2s forwards;
-}
-.signature .l2 {
-  -webkit-animation: signature 1s 2.5s forwards;
-  animation: signature 1s 2.5s forwards;
-}
-.signature .i2 {
-  -webkit-animation: signature 1s 3s forwards;
-  animation: signature 1s 3s forwards;
-}
-.signature .a {
-  -webkit-animation: signature 1s 3.5s forwards;
-  animation: signature 1s 3.5s forwards;
-}
-.signature .m {
-  -webkit-animation: signature 1s 4s forwards;
-  animation: signature 1s 4s forwards;
-}
-.signature .space {
-  -webkit-animation: signature 1s 4.5s forwards;
-  animation: signature 1s 4.5s forwards;
-}
-.signature .d {
-  -webkit-animation: signature 1s 5s forwards;
-  animation: signature 1s 5s forwards;
-}
-.signature .o {
-  -webkit-animation: signature 1s 5.5s forwards;
-  animation: signature 1s 5.5s forwards;
-}
-.signature .u {
-  -webkit-animation: signature 1s 6s forwards;
-  animation: signature 1s 6s forwards;
-}
-.signature .g {
-  -webkit-animation: signature 1s 6.5s forwards;
-  animation: signature 1s 6.5s forwards;
-}
-.signature .l3 {
-  -webkit-animation: signature 1s 7s forwards;
-  animation: signature 1s 7s forwards;
-}
-.signature .a2 {
-  -webkit-animation: signature 1s 7.5s forwards;
-  animation: signature 1s 7.5s forwards;
-}
-.signature .s {
-  -webkit-animation: signature 1s 8s forwards;
-  animation: signature 1s 8s forwards;
-}
-
-@-webkit-keyframes signature {
-  0% {
-    -webkit-transform: translateY(1.5em);
-    transform: translateY(1.5em);
-    opacity: 0;
-  }
-  30% {
-    -webkit-transform: translateY(-0.5em);
-    transform: translateY(-0.5em);
-  }
-  60% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes signature {
-  0% {
-    -webkit-transform: translateY(1.5em);
-    transform: translateY(1.5em);
-    opacity: 0;
-  }
-  30% {
-    -webkit-transform: translateY(-0.5em);
-    transform: translateY(-0.5em);
-  }
-  60% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    opacity: 1;
-  }
+  background-color: var(--body-background);
 }
