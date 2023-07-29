@@ -25,14 +25,6 @@ function App() {
       }
     };
 
-    const image = new Image();
-    image.src = "/pano-final-dark-3.png";
-    image.onload = () => {
-      // Even though the image is loaded, we won't stop loading
-      // until the timer is done.
-      console.log("Image loaded");
-    };
-
     const timer = setTimeout(() => {
       timerDone = true;
       checkAndSetLoading();
@@ -42,9 +34,7 @@ function App() {
   }, []);
 
   const lenis = new Lenis();
-  lenis.on("scroll", (e) => {
-    console.log(e);
-  });
+  lenis.on("scroll", (e) => {});
 
   function raf(time) {
     lenis.raf(time);

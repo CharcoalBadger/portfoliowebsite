@@ -57,7 +57,7 @@ const Maori3d = () => {
 
     // Add DRACOLoader
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath("/draco/javascript/");
+    dracoLoader.setDecoderPath("/");
     loader.setDRACOLoader(dracoLoader);
 
     loader.load(

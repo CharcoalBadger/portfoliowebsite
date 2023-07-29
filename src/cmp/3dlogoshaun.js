@@ -36,7 +36,7 @@ export default function Logoshaun() {
 
     // Add DRACOLoader
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath("/draco/javascript/");
+    dracoLoader.setDecoderPath("/");
     loader.setDRACOLoader(dracoLoader);
 
     loader.load("/shaunografia-logo-7Draco.glb", (gltf) => {

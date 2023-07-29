@@ -14,9 +14,7 @@ export default function Sands() {
   const containerRef = useRef();
 
   const lenis = new Lenis();
-  lenis.on("scroll", (e) => {
-    console.log(e);
-  });
+  lenis.on("scroll", (e) => {});
 
   function raf(time) {
     lenis.raf(time);
@@ -98,7 +96,7 @@ export default function Sands() {
 
     // Add DRACOLoader
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath("/draco/javascript/");
+    dracoLoader.setDecoderPath("/");
     loader.setDRACOLoader(dracoLoader);
 
     loader.load("/laptop1Draco.glb", (gltf) => {
