@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, lazy, Suspense } from "react";
 import "./App.css";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "./cmp/navbar";
-import Project from "./cmp/project";
-import About from "./cmp/about";
 import PanoramicImage from "./cmp/panoramicimage";
-import Contactform from "./cmp/contactform";
-import Footer from "./cmp/footer";
 import Preloader from "./cmp/preloader";
+
+const LazyProject = lazy(() => import("./cmp/project"));
+const LazyAbout = lazy(() => import("./cmp/about"));
+const LazyContactform = lazy(() => import("./cmp/contactform"));
+const LazyFooter = lazy(() => import("./cmp/footer"));
 
 function App() {
   const aboutRef = useRef(null);
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <div>
+      {/* Your other components that should load first */}
       <Navbar
         onNavClick={handleNavClick}
         aboutRef={aboutRef}
@@ -62,16 +64,20 @@ function App() {
         style={{ visibility: loading ? "hidden" : "visible" }}
         setLoading={setLoading}
       />
-      <div className="workapp" ref={workRef}>
-        <Project />
-      </div>
-      <div className="aboutapp" ref={aboutRef}>
-        <About />
-      </div>
-      <div className="contact" ref={contactRef}>
-        <Contactform />
-      </div>
-      <Footer />
+
+      {/* Lazy load the components */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <div className="workapp" ref={workRef}>
+          <LazyProject />
+        </div>
+        <div className="aboutapp" ref={aboutRef}>
+          <LazyAbout />
+        </div>
+        <div className="contact" ref={contactRef}>
+          <LazyContactform />
+        </div>
+        <LazyFooter />
+      </Suspense>
     </div>
   );
 }
