@@ -76,7 +76,7 @@ export default function Sands() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Set the video source and play the video when it becomes visible
-          video.src = "/sands-recording-5k.mp4";
+          video.src = "/sands-recording-1k-new.mp4";
           playPromise = video.play();
         } else {
           // Pause the video when it's not visible

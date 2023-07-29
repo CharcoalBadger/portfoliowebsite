@@ -73,7 +73,7 @@ export default function Shaunografia() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Set the video source and play the video when it becomes visible
-          video.src = "/shaunografia-recording-5k.mp4";
+          video.src = "/shaunografia-recording-1k-new.mp4";
           playPromise = video.play();
         } else {
           // Pause the video when it's not visible
