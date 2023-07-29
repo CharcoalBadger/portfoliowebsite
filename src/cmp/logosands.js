@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import * as THREE from "three";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./logosands.css";
@@ -32,7 +33,13 @@ export default function Logosands() {
 
     // Load 3D model
     const loader = new GLTFLoader();
-    loader.load("/3dsands.glb", (gltf) => {
+
+    // Add DRACOLoader
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("/draco/javascript/");
+    loader.setDRACOLoader(dracoLoader);
+
+    loader.load("/3dsandsDraco.glb", (gltf) => {
       const model = gltf.scene;
       scene.add(model);
 

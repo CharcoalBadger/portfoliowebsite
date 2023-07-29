@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import "./maori3d.css";
 
 const Maori3d = () => {
@@ -53,8 +54,14 @@ const Maori3d = () => {
     let model = null;
 
     const loader = new GLTFLoader();
+
+    // Add DRACOLoader
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("/draco/javascript/");
+    loader.setDRACOLoader(dracoLoader);
+
     loader.load(
-      "/earth.glb",
+      "/earthDraco.glb",
       function (gltf) {
         model = gltf.scene; // Assign the loaded scene to the variable
         model.scale.set(2.3, 2.3, 2.3); // Set the scale of the model

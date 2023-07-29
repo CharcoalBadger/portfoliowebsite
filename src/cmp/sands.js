@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import * as THREE from "three";
 import "./sands.css";
 import Logosands from "./logosands";
@@ -95,7 +96,12 @@ export default function Sands() {
 
     observer.observe(container);
 
-    loader.load("/laptop1.glb", (gltf) => {
+    // Add DRACOLoader
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("/draco/javascript/");
+    loader.setDRACOLoader(dracoLoader);
+
+    loader.load("/laptop1Draco.glb", (gltf) => {
       const model = gltf.scene;
 
       // Apply screen texture

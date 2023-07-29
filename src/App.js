@@ -26,7 +26,7 @@ function App() {
     };
 
     const image = new Image();
-    image.src = "/pano-final-dark-3.webp";
+    image.src = "/pano-final-dark-3.png";
     image.onload = () => {
       // Even though the image is loaded, we won't stop loading
       // until the timer is done.
