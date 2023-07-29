@@ -1,0 +1,3 @@
+[submodule "public/draco"]
+	path = public/draco
+	url = https://github.com/google/draco.git
