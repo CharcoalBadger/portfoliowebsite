@@ -30,7 +30,7 @@ function PanoramicImage() {
     // Load the panoramic image and create a texture
     const loader = new THREE.TextureLoader();
     loader.load(
-      "/pano-final-dark-3.png",
+      "/pano-final-dark-2.png",
       function (texture) {
         let isRendered = false;
         // Once the texture has loaded, create the sphere and add it to the scene
