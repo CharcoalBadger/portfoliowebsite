@@ -26,7 +26,7 @@ function App() {
     };
 
     const image = new Image();
-    image.src = "/pano-final-dark-3.png";
+    image.src = "/pano-final-dark-3.webp";
     image.onload = () => {
       // Even though the image is loaded, we won't stop loading
       // until the timer is done.
@@ -36,7 +36,7 @@ function App() {
     const timer = setTimeout(() => {
       timerDone = true;
       checkAndSetLoading();
-    }, 1300); // 10000 milliseconds equals to 10 seconds
+    }, 1500); // 10000 milliseconds equals to 10 seconds
 
     return () => clearTimeout(timer); // this will clear the timer when the component is unmounted
   }, []);
