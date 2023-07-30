@@ -4,7 +4,6 @@
   flex-direction: column;
   margin-top: 20vh;
   height: 90vh;
-
   width: 50%;
 }
 
@@ -12,7 +11,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100%;
 }
 
@@ -21,14 +19,13 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  margin-bottom: 7vh;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 15vh;
+  margin-left: 2%;
 }
 
 h3 {
@@ -134,13 +131,380 @@ h3 {
   border: 1px solid var(--body-color);
 }
 
-/* .displacement {
-  filter: url(#displacementFilter);
+@media (min-width: 768px) {
+  .contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+    height: 100%;
+    width: 50%;
+  }
+
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  .contact-logo {
+    width: 30px;
+    margin-right: 1vh;
+  }
+
+  .social-container {
+    margin-bottom: 5vh;
+  }
+
+  form {
+    margin-left: 2%;
+    width: 90%;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    width: 40vw;
+  }
+
+  a {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem; /* 56px on large desktop */
+  }
+
+  h2 {
+    font-size: 2rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.2rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1rem; /* 22px on large desktop */
+  }
 }
 
-svg {
-  width: 100%;
-  height: 90vh;
-  position: absolute;
-  z-index: -1;
-} */
+@media (min-width: 1024px) {
+  .contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+    height: 100%;
+    width: 50%;
+  }
+
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  .contact-logo {
+    width: 30px;
+    margin-right: 1vh;
+  }
+
+  .social-container {
+    margin-bottom: 5vh;
+  }
+
+  form {
+    margin-left: 2%;
+    width: 90%;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    width: 40vw;
+  }
+
+  a {
+    font-size: 1.1rem;
+  }
+
+  h1 {
+    font-size: 2.1rem; /* 56px on large desktop */
+  }
+
+  h2 {
+    font-size: 2.1rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.3rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.1rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1280px) {
+  .contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+    height: 100%;
+    width: 50%;
+  }
+
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  .contact-logo {
+    width: 30px;
+    margin-right: 1vh;
+  }
+
+  .social-container {
+    margin-bottom: 5vh;
+  }
+
+  form {
+    margin-left: 2%;
+    width: 90%;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    width: 40vw;
+  }
+
+  a {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2.2rem; /* 56px on large desktop */
+  }
+
+  h2 {
+    font-size: 2.2rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.4rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.2rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1366px) {
+  .contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+    height: 100%;
+    width: 50%;
+  }
+
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  .contact-logo {
+    width: 30px;
+    margin-right: 1vh;
+  }
+
+  .social-container {
+    margin-bottom: 5vh;
+  }
+
+  form {
+    margin-left: 2%;
+    width: 90%;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    width: 40vw;
+  }
+
+  a {
+    font-size: 1.25rem;
+  }
+
+  h1 {
+    font-size: 2.25rem; /* 56px on large desktop */
+  }
+
+  h2 {
+    font-size: 2.25rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.45rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.25rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1440px) {
+  .contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+    height: 100%;
+    width: 50%;
+  }
+
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  .contact-logo {
+    width: 30px;
+    margin-right: 1vh;
+  }
+
+  .social-container {
+    margin-bottom: 5vh;
+  }
+
+  form {
+    margin-left: 2%;
+    width: 90%;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    width: 40vw;
+  }
+
+  a {
+    font-size: 1.3rem;
+  }
+
+  h1 {
+    font-size: 2.3rem; /* 56px on large desktop */
+  }
+
+  h2 {
+    font-size: 2.3rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.5rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.3rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1600px) {
+  .contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+    height: 100%;
+    width: 50%;
+  }
+
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  .contact-logo {
+    width: 30px;
+    margin-right: 1vh;
+  }
+
+  .social-container {
+    margin-bottom: 5vh;
+  }
+
+  form {
+    margin-left: 2%;
+    width: 90%;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    width: 40vw;
+  }
+
+  a {
+    font-size: 1.4rem;
+  }
+
+  h1 {
+    font-size: 2.4rem; /* 56px on large desktop */
+  }
+
+  h2 {
+    font-size: 2.4rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.6rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.4rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1920px) {
+  .contact-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+    height: 100%;
+    width: 50%;
+  }
+
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  .contact-logo {
+    width: 30px;
+    margin-right: 1vh;
+  }
+
+  .social-container {
+    margin-bottom: 5vh;
+  }
+
+  form {
+    margin-left: 2%;
+    width: 90%;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    width: 40vw;
+  }
+
+  a {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3.2rem; /* 56px on large desktop */
+  }
+
+  h2 {
+    font-size: 3.2rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 2rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.5rem; /* 22px on large desktop */
+  }
+}

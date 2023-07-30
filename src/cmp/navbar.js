@@ -7,6 +7,10 @@ export default function Navbar({ onNavClick, aboutRef, workRef, contactRef }) {
     window.location.href = "/";
   };
 
+  const downloadFile = () => {
+    document.getElementById("download").click();
+  };
+
   useEffect(() => {
     gsap.fromTo(
       ".navlogo",
@@ -56,14 +60,17 @@ export default function Navbar({ onNavClick, aboutRef, workRef, contactRef }) {
           <button className="nav-button" onClick={() => onNavClick(contactRef)}>
             Hire me
           </button>
-
+          <button className="nav-button" onClick={downloadFile}>
+            Download CV
+          </button>
+          {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
           <a
-            className="nav-button"
+            id="download"
+            className="hidden"
             href="/cv.pdf"
             download="William_Douglas_CV.pdf"
-          >
-            Download CV
-          </a>
+            aria-hidden="true"
+          />
         </nav>
       </div>
     </div>

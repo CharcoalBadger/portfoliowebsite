@@ -91,3 +91,171 @@
   justify-content: center;
   color: var(--body-accent);
 }
+
+@media (min-width: 768px) {
+  .aboutr-inner {
+    margin-top: 25vh;
+    margin-left: 5%;
+    width: 50%;
+  }
+  .aboutl-inner {
+    margin-left: 10%;
+  }
+  h1 {
+    font-size: 2rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.2rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutr-inner {
+    margin-top: 25vh;
+    margin-left: 5%;
+    width: 50%;
+  }
+  .aboutl-inner {
+    margin-left: 10%;
+  }
+
+  .logo {
+    width: 40px;
+  }
+
+  h1 {
+    font-size: 2.1rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.3rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.1rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1280px) {
+  .aboutr-inner {
+    margin-top: 25vh;
+    margin-left: 5%;
+    width: 50%;
+  }
+  .aboutl-inner {
+    margin-left: 10%;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+  h1 {
+    font-size: 2.2rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.4rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.2rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1366px) {
+  .aboutr-inner {
+    margin-top: 25vh;
+    margin-left: 5%;
+    width: 50%;
+  }
+  .aboutl-inner {
+    margin-left: 10%;
+  }
+
+  h1 {
+    font-size: 2.25rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.45rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.25rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1440px) {
+  .aboutr-inner {
+    margin-top: 25vh;
+    margin-left: 5%;
+    width: 50%;
+  }
+  .aboutl-inner {
+    margin-left: 10%;
+  }
+
+  h1 {
+    font-size: 2.3rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.5rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.3rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1600px) {
+  .aboutr-inner {
+    margin-top: 25vh;
+    margin-left: 5%;
+    width: 50%;
+  }
+  .aboutl-inner {
+    margin-left: 10%;
+  }
+
+  h1 {
+    font-size: 2.4rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.6rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.4rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1920px) {
+  .aboutr-inner {
+    margin-top: 25vh;
+    margin-left: 5%;
+    width: 50%;
+  }
+  .aboutl-inner {
+    margin-left: 10%;
+  }
+
+  h1 {
+    font-size: 3.2rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 2rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.5rem; /* 22px on large desktop */
+  }
+}

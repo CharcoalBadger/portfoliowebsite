@@ -9,11 +9,9 @@
   align-items: center;
   z-index: 100;
 }
-
 .navlogo {
   width: 25%;
 }
-
 .navlogo:hover {
   cursor: pointer;
 }
@@ -54,7 +52,47 @@
   color: var(--body-color);
 }
 
+.hidden {
+  display: none;
+}
+
+/* iPads in portrait */
 @media (min-width: 768px) {
+  .navlogo {
+    width: 20%;
+  }
+}
+
+/* Small laptops */
+@media (min-width: 1024px) {
+  .navlogo {
+    width: 13%;
+  }
+}
+
+/* Laptops */
+@media (min-width: 1280px) {
+  .navlogo {
+    width: 10%;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1600px) {
+  .navlogo {
+    width: 10%;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1792px) {
+  .navlogo {
+    width: 8%;
+  }
+}
+
+/* Larger Desktops */
+@media (min-width: 1920px) {
   .navlogo {
     width: 8%;
   }

@@ -51,25 +51,6 @@ export default function Contactform() {
 
   requestAnimationFrame(raf);
 
-  // useEffect(() => {
-  //   let tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: containerRef.current,
-  //       start: "center bottom",
-  //       end: "bottom top",
-  //       scrub: true,
-  //       toggleActions: "play none none reverse",
-  //     },
-  //   });
-
-  //   tl.to(".displacement", {
-  //     attr: {
-  //       r: 1200,
-  //     },
-  //     duration: 2,
-  //   });
-  // }, []);
-
   return (
     <div className="contact-container" ref={containerRef}>
       <div className="process-container">
@@ -157,6 +138,7 @@ export default function Contactform() {
           <input type="hidden" name="form-name" value="contact" />
           <p>
             <input
+              className="form-name"
               type="text"
               name="name"
               placeholder="Name*"
@@ -165,6 +147,7 @@ export default function Contactform() {
           </p>
           <p>
             <input
+              className="form-email"
               type="email"
               name="email"
               placeholder="Email*"
@@ -173,6 +156,7 @@ export default function Contactform() {
           </p>
           <p>
             <textarea
+              className="form-textarea"
               name="message"
               placeholder="Your Message*"
               aria-label="Your Message"
@@ -183,46 +167,6 @@ export default function Contactform() {
           </p>
         </form>
       </div>
-      {/* <svg
-        viewBox="0 0 1920 960"
-        fill="none"
-        preserveAspectRatio="xMidYMin slice"
-      >
-        <defs>
-          <filter id="displacementFilter">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.01"
-              numOctaves="1"
-              result="noise"
-            />
-            <feDisplacementMap
-              in="SourceGraphic"
-              in2="noise"
-              scale="50"
-              xChannelSelector="R"
-              yChannelSelector="G"
-            />
-          </filter>
-          <mask id="circleMask">
-            <circle
-              cx="600" //x position
-              cy="800" //y position
-              r="0" //radius
-              fill="white"
-              className="displacement"
-            />
-          </mask>
-        </defs>
-        <image
-          // style={{ transform: "translateX(-20%)" }}
-          // href="https://images.unsplash.com/photo-1617957718587-60a442884bee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
-          href="/gradient-2.png"
-          width="100%"
-          height="100%"
-          mask="url(#circleMask)"
-        />
-      </svg> */}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import * as THREE from "three";
@@ -10,8 +10,60 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Breakpoints for mobile, tablet, and desktop
+const breakpoints = {
+  desktop768: 768,
+  desktop1024: 1024,
+  desktop1280: 1280,
+  desktop1366: 1366,
+  desktop1440: 1440,
+  desktop1600: 1600,
+  desktop1920: 1920,
+};
+
+const getScaleForWidth = (width) => {
+  if (width <= breakpoints.desktop768) {
+    return [0.1, 0.1, 0.1]; // scale for default
+  } else if (width < breakpoints.desktop1024) {
+    return [1, 1, 0.8]; // additional scale
+  } else if (width < breakpoints.desktop1280) {
+    return [1.3, 1.3, 1]; // additional scale
+  } else if (width < breakpoints.desktop1366) {
+    return [1.7, 1.7, 1.2]; // additional scale
+  } else if (width < breakpoints.desktop1440) {
+    return [1.7, 1.7, 1.2]; // additional scale
+  } else if (width < breakpoints.desktop1600) {
+    return [1.7, 1.7, 1.2]; // additional scale
+  } else if (width < breakpoints.desktop1920) {
+    return [2, 2, 1.3]; // additional scale
+  } else {
+    return [2.5, 2.5, 1.5]; // scale for desktop
+  }
+};
+
+const getPositionForWidth = (width) => {
+  if (width <= breakpoints.desktop768) {
+    return [0.1, 0.1, 0.1]; // position for default
+  } else if (width < breakpoints.desktop1024) {
+    return [0.2, -30, -300]; // additional position
+  } else if (width < breakpoints.desktop1280) {
+    return [0.3, -30, -300]; // additional position
+  } else if (width < breakpoints.desktop1366) {
+    return [0.4, -30, -300]; // additional position
+  } else if (width < breakpoints.desktop1440) {
+    return [0.5, -30, -300]; // additional position
+  } else if (width < breakpoints.desktop1600) {
+    return [0.6, -30, -300]; // additional position
+  } else if (width < breakpoints.desktop1920) {
+    return [0.1, -30, -300]; // position for tablet
+  } else {
+    return [0.1, -30, -300]; // position for desktop
+  }
+};
+
 export default function Sands() {
   const containerRef = useRef();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const lenis = new Lenis();
   lenis.on("scroll", (e) => {});
@@ -25,6 +77,8 @@ export default function Sands() {
 
   useEffect(() => {
     const container = containerRef.current;
+    const scale = getScaleForWidth(windowWidth);
+    let position = getPositionForWidth(windowWidth);
 
     // Set up scene
     const scene = new THREE.Scene();
@@ -49,10 +103,6 @@ export default function Sands() {
     scene.add(pointLight);
 
     const loader = new GLTFLoader();
-
-    // Load the screen texture
-    // const textureLoader = new THREE.TextureLoader();
-    // const screenTexture = textureLoader.load("/shaunimage.png");
 
     // Prepare the video element
     const video = document.createElement("video");
@@ -85,8 +135,6 @@ export default function Sands() {
               () => video.pause(),
               (error) => console.error(error)
             );
-            // Optional: Remove the video source when it's not visible
-            // video.src = '';
           }
         }
       });
@@ -104,17 +152,6 @@ export default function Sands() {
 
       // Apply screen texture
       model.traverse((node) => {
-        // gltf.scene.traverse((node) => {
-        //   if (node.isMesh) {
-        //     console.log(
-        //       "Found a mesh node:",
-        //       node.name,
-        //       "with material:",
-        //       node.material.name
-        //     );
-        //   }
-        // });
-
         if (node.isMesh && node.material.name === "material_2") {
           // Replace 'ScreenMaterial' with the actual material name
           node.material.map = screenTexture;
@@ -144,8 +181,8 @@ export default function Sands() {
 
       scene.add(model);
 
-      model.position.set(0.1, -30, -300);
-      model.scale.set(2.5, 2.5, 1.5);
+      model.position.set(...position);
+      model.scale.set(...scale);
       model.rotation.y = 66.2;
       model.rotation.x = 44.5;
 
@@ -163,6 +200,7 @@ export default function Sands() {
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
+      setWindowWidth(window.innerWidth);
     }
     window.addEventListener("resize", handleResize);
 
@@ -188,7 +226,7 @@ export default function Sands() {
       window.removeEventListener("resize", handleResize);
       container.removeChild(renderer.domElement);
     };
-  }, []);
+  }, [windowWidth]);
 
   return (
     <div className="saparent-container">

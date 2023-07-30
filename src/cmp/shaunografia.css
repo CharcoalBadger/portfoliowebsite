@@ -53,3 +53,163 @@
   position: absolute;
   z-index: -1;
 }
+
+@media (min-width: 768px) {
+  .text-container {
+    margin-left: 2%;
+    width: 70%;
+  }
+  .shparent-container {
+    margin-top: -30vh;
+    margin-bottom: 40vh;
+  }
+  h1 {
+    font-size: 2rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.2rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-container {
+    margin-left: 2%;
+    width: 50%;
+  }
+  .shparent-container {
+    margin-top: -5vh;
+    margin-bottom: 70vh;
+  }
+
+  h1 {
+    font-size: 2.1rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.3rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.1rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1280px) {
+  .text-container {
+    margin-left: 2%;
+    width: 50%;
+  }
+  .shparent-container {
+    margin-bottom: 60vh;
+    margin-top: -20vh;
+  }
+
+  h1 {
+    font-size: 2.2rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.4rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.2rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1366px) {
+  .text-container {
+    margin-left: 2%;
+    width: 50%;
+  }
+  .shparent-container {
+    margin-bottom: 90vh;
+    margin-top: 5vh;
+  }
+
+  h1 {
+    font-size: 2.25rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.45rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.25rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1440px) {
+  .text-container {
+    margin-left: 2%;
+    width: 50%;
+  }
+  .shparent-container {
+    margin-bottom: 70vh;
+    margin-top: -15vh;
+  }
+
+  h1 {
+    font-size: 2.3rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.5rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.3rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1600px) {
+  .text-container {
+    margin-left: 2%;
+    width: 50%;
+  }
+  .shparent-container {
+    margin-bottom: 70vh;
+    margin-top: -15vh;
+  }
+
+  h1 {
+    font-size: 2.4rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 1.6rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.4rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1920px) {
+  .text-container {
+    margin-left: 5%;
+    width: 50%;
+  }
+  .shparent-container {
+    margin-bottom: 70vh;
+    margin-top: -15vh;
+  }
+
+  h1 {
+    font-size: 3.2rem; /* 56px on large desktop */
+  }
+
+  h3 {
+    font-size: 2rem; /* 36px on large desktop */
+  }
+
+  p {
+    font-size: 1.5rem; /* 22px on large desktop */
+  }
+}
