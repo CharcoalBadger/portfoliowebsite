@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
 :root {
   --body-background: #1f2122;
   --body-color: #f4e9cd;
@@ -94,23 +97,54 @@ body {
 }
 
 h1 {
-  font-size: 2rem; /* 32px on mobile */
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: italic;
 }
 
 h2 {
-  font-size: 1.75rem; /* 28px on mobile */
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: italic;
 }
 
 h3 {
-  font-size: 1.5rem; /* 24px on mobile */
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: italic;
 }
 
 p {
-  font-size: 1rem; /* 16px on mobile */
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
 }
 
 li {
-  font-size: 1rem; /* 16px on mobile */
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+
+.logo-name {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.contact-logo-container {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.contact-container input,
+.contact-container textarea {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 /* Medium devices (tablets, 768px and up) */

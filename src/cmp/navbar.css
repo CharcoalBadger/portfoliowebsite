@@ -27,7 +27,7 @@
   padding: 6px 15px;
   border-radius: 20px;
   margin: 0 10px;
-  font-weight: 600;
+
   border: none; /* Removes default button border */
   background: none; /* Removes default button background */
   cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
@@ -44,7 +44,6 @@
   padding: 6px 15px;
   border-radius: 20px;
   margin: 0 10px;
-  font-weight: 600;
 }
 
 .navigation a:hover {

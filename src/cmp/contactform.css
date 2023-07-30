@@ -48,6 +48,7 @@ h3 {
 
 .contact-title {
   color: var(--body-accent);
+  text-decoration: underline;
 }
 
 .contact-container button {

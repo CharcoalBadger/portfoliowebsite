@@ -6,6 +6,12 @@
   margin-bottom: 70vh;
 }
 
+.shheader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .text-container {
   margin-left: 10%;
   width: 30%;

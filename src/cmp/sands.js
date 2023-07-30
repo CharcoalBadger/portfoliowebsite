@@ -278,8 +278,10 @@ export default function Sands() {
         /> */}
       </svg>
       <div className="stext-container">
-        <Logosands />
-        <h1>Sands Carving Studio</h1>
+        <div className="saheader-container">
+          <Logosands />
+          <h1>Sands Carving Studio</h1>
+        </div>
         <p>
           The Sands Carving Studio website revamp was primarily undertaken to
           correct non-functional components and enhance its overall user

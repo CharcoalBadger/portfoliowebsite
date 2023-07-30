@@ -7,6 +7,12 @@
   margin-bottom: 50vh;
 }
 
+.saheader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .stext-container {
   margin-right: 10%;
   width: 30%;

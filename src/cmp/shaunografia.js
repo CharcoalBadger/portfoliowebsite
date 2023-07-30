@@ -268,8 +268,10 @@ export default function Shaunografia() {
       </svg>
 
       <div className="text-container">
-        <Logoshaun />
-        <h1>Shaunografia</h1>
+        <div className="shheader-container">
+          <Logoshaun />
+          <h1>Shaunografia</h1>
+        </div>
         <p>
           The Shaunografia website is a minimalist, mobile-friendly platform,
           created for a freelance photographer to uniquely showcase their work
