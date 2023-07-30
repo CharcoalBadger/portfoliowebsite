@@ -12,6 +12,75 @@
   color: inherit;
   cursor: pointer;
   font: inherit;
-  font-size: 1.5rem;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .footer-btn {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-btn {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 1.1rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer-btn {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1.2rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1366px) {
+  .footer-btn {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1.25rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer-btn {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 1.3rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1600px) {
+  .footer-btn {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1.4rem; /* 22px on large desktop */
+  }
+}
+
+@media (min-width: 1920px) {
+  .footer-btn {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1.5rem; /* 22px on large desktop */
+  }
 }

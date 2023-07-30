@@ -259,7 +259,7 @@ export default function Shaunografia() {
           </mask>
         </defs>
         <image
-          style={{ transform: "translateX(20%)" }}
+          style={{ transform: "translateX(25%)" }}
           href="/gradient-rad.png"
           width="100%"
           height="100%"
