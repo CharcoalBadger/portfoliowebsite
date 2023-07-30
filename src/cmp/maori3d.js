@@ -77,39 +77,6 @@ const Maori3d = () => {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.7); // white light
     scene.add(ambientLight);
 
-    // const lights = [];
-    // const lightColours = [
-    //   [0xffffff, 3, 12], // Light Blue for Oceans
-    //   [0xffffff, 3, 12], // Green for Landmasses
-    //   [0xffffff, 3, 12], // White for Clouds
-    //   [0xffffff, 3, 12], // Light Brown for Deserts
-    //   [0xffffff, 3, 12], // Dark Brown for Mountain ranges
-    //   [0xffffff, 3, 12], // Red for Magma
-    // ];
-
-    // const lightPositions = [
-    //   [1, 0, 8],
-    //   [-2, 1, -10],
-    //   [0, 10, 1],
-    //   [0, -10, -1],
-    //   [10, 3, 0],
-    //   [-10, -1, 0],
-    // ];
-    // for (let i = 0; i < 6; i++) {
-    //   lights[i] = new THREE.PointLight(
-    //     lightColours[i][0],
-    //     lightColours[i][1],
-    //     lightColours[i][2]
-    //   );
-    //   lights[i].position.set(
-    //     lightPositions[i][0],
-    //     lightPositions[i][1],
-    //     lightPositions[i][2]
-    //   );
-
-    //   scene.add(lights[i]);
-    // }
-
     const render = () => {
       requestAnimationFrame(render);
       controls.update();
