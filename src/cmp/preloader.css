@@ -1,11 +1,18 @@
 .preloader {
   position: fixed;
-  z-index: 999900; /* increase this if needed */
-  top: 0;
+  z-index: 999900;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(
-    --body-background
-  ); /* add a background color to cover everything underneath */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background-color: var(--body-background);
+}
+
+.preloader h1 {
+  color: var(--body-accent);
+  margin-left: 5%;
+  margin-bottom: 5%;
 }
