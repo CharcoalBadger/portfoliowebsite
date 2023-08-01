@@ -67,8 +67,8 @@ export default function Navbar({ onNavClick, aboutRef, workRef, contactRef }) {
           <a
             id="download"
             className="hidden"
-            href="/cv.pdf"
-            download="William_Douglas_CV.pdf"
+            href="/William-Douglas-CV.pdf"
+            download="William-Douglas-CV.pdf"
             aria-hidden="true"
           />
         </nav>
